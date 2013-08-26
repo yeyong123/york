@@ -1,0 +1,14 @@
+<% provide(:title, t('.product')) %>
+<p id="notice"><%= notice %></p>
+<table class="table">
+	<tbody>
+		<% @products.each do |product| %>
+			<tr>
+				<td><%= product.title %></td>
+				<td><%= product.number %></td>
+				<td><%= product.content %></td>
+			</tr>	
+		<% end %>
+		</tbody>
+</table>
+<%= link_to t('.new_product'), new_product_path %>

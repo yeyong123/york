@@ -1,0 +1,17 @@
+"zh-CN":
+  home:
+    index:
+      home: "首页"
+      product: "产品中心"
+      about: "关于我们"
+      contact: "联系我们"
+  products:
+    index:
+      product: "产品中心"
+      new_product: "发布新产品"
+    form:
+      have: "有"
+      number: "个"
+      error: "错误"
+      prohibited_this_product_from_being_saved: "禁止该产品保存"
+      submit: "发布"

@@ -1,0 +1,12 @@
+"zh-CN":
+  activerecord:
+    models:
+      product: "产品中心"
+    attributes:
+      product:
+        title: "标题"
+        number: "货号"
+        use: "使用范围"
+        load: "载重量"
+        content: "描述"
+      
