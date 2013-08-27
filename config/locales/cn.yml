@@ -1,6 +1,6 @@
 "zh-CN":
-  home:
-    index:
+  layouts:
+    application:
       home: "首页"
       product: "产品中心"
       about: "关于我们"

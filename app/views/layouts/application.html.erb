@@ -10,16 +10,60 @@
 	<![endif] -->
 </head>
 <body>
+	<div class="set_locale navbar-fixed-top">
 	<%= form_tag root_path, class: 'locale' do %>
 		<%= select_tag 'set_locale', options_for_select(LANGUAGES, I18n.locale.to_s),
 			onchange: 'this.form.submit()' %>
 			<%= javascript_tag "$$('.locale input').each(Element.hide)" %>
 		<% end %>
-		<p id="notice"><%= notice %></p>
-		<p id ="alert"><%= alert %></p>
+	</div>
+<div class="index-show">
+	<p>banar</p>
+</div>
+<div class="navbar">
+	<div class="navbar-inner">
+		<div class="container">
+<ul class="nav">
+	<li><%= link_to t('.home'), root_path, iclass: "icon-home" %></li>
+	<li><%= link_to t('.product'), products_path %></li>
+	<li><%= link_to t('.about'), "#" %></li>
+	<li><%= link_to t('.contact'), "#" %></li>
+	<% if user_signed_in? %>
+		<li class="dropdown">
+		<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user"></i><%= current_user.name %><b class="caret"></b></a> 
+		<ul class="dropdown-menu">
+			<li><%= link_to "修改密码", edit_registration_path(:user) %></li>
+			<li><%= link_to "个人中心", "#" %></li>
+			<li><%= link_to "购物车", "#" %><span class="btto"><%= link_to "2", "#", class: "badge badge-important" %></span></li>
+			<li class="divider"></li>
+			<li><%= link_to "注销", destroy_user_session_path, :method => :delete %></li>
+		</ul>
+		</li>
+		<% else %>
+		<li><%= link_to t('.sign_in'), new_session_path(:user) %></li> 
+		<li><%= link_to t('.sign_up'), new_registration_path(:user) %></li>
+
+	<% end %>
+	</ul>
+	<form action="/search" method="get" class="navbar-search pull-left form-search">
+			<i class="icon-search"></i>
+<input type="text" name="q" value="" class="serach-query" placeholder="search">
+		<button type="submit" class="btn no-btn btn-info"><%= t('.search') %></button>
+	</form>
+</div>
+</div>
+</div>
+
+
+
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+		<div class="breadcrumb">
+			<%= render_navigation(:renderer => :breadcrumbs, :join_with => ' &raquo; ') %>
+		</div>
 		<div class="container">
 			<%= yield %>
 		</div>
 
-</body>
+		</body>
 </html>

@@ -5,7 +5,8 @@
       admin: "管理员"
       user: "用户"
     attributes:
-      product:
+      product: 
+        product: "产品展示"
         title: "标题"
         number: "货号"
         use: "使用范围"
