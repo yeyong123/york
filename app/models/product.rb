@@ -13,11 +13,14 @@
 #
 
 class Product < ActiveRecord::Base
-  attr_accessible :content, :load, :number, :title, :use
+  attr_accessible :content, :load, :number, :title, :use, :photos_attributes
 
 	validates :title, presence: true, length: { maximum: 50 }
 	validates :number, presence: true, uniqueness: true
 	validates :content, presence: true
 	validates :use, presence: true
 	validates :load, presence: true
+
+	has_many :photos
+	accepts_nested_attributes_for :photos
 end

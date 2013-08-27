@@ -15,7 +15,11 @@
 			onchange: 'this.form.submit()' %>
 			<%= javascript_tag "$$('.locale input').each(Element.hide)" %>
 		<% end %>
-<%= yield %>
+		<p id="notice"><%= notice %></p>
+		<p id ="alert"><%= alert %></p>
+		<div class="container">
+			<%= yield %>
+		</div>
 
 </body>
 </html>

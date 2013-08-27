@@ -1,5 +1,10 @@
 York::Application.routes.draw do
-	scope '(:locale)' do
+		scope '(:locale)' do
+
+  devise_for :users
+
+  devise_for :admins
+
 	resources :products
 	root to: 'home#index'
 	end

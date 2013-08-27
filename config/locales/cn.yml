@@ -9,6 +9,8 @@
     index:
       product: "产品中心"
       new_product: "发布新产品"
+    new:
+      back: "返回"    
     form:
       have: "有"
       number: "个"

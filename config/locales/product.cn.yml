@@ -2,6 +2,8 @@
   activerecord:
     models:
       product: "产品中心"
+      admin: "管理员"
+      user: "用户"
     attributes:
       product:
         title: "标题"
@@ -9,4 +11,13 @@
         use: "使用范围"
         load: "载重量"
         content: "描述"
-      
+      admin: 
+        email: "邮箱"
+        password: "密码"
+        password_confirmation: "确认密码"
+      user:
+        email: "邮箱"
+        password: "密码"
+        password_confirmation: "确认密码"
+        name: "用户名"
+        remember_me: "记住登录"

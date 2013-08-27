@@ -30,11 +30,17 @@
 		<%= f.text_field :load %>
 	</div>
 	<div class="field">
+		<%= f.fields_for :photos do |photo| %>
+			<%= photo.label :image %><br />
+			<%= photo.file_field :image %>
+		<% end %>
+	</div>
+	<div class="field">
 		<%= f.label :content %><br />
 		<%= f.text_area :content %>
 	</div>
 	<div class="form-action">
-		<%= f.submit t('.submit'),class: "btn btn-primary" %>
+		<%= f.submit t('.submit'),class: "btn btn-success" %>  <%= link_to t('.back'), products_path, class: "btn btn-primary" %>
 	</div>	
 <% end %>
 
