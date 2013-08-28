@@ -4,8 +4,10 @@ York::Application.routes.draw do
   devise_for :users
 
   devise_for :admins
-
+	resources :carts
+	resources :line_items
 	resources :products
+	match '/search' => 'products#search'
 	root to: 'home#index'
 	end
   # The priority is based upon order of creation:

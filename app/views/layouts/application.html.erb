@@ -6,7 +6,9 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 	<!--[if lt IE 9]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-ie6.css">
+	 	<link rel="stylesheet" type="text/css" href="bootstrap/css/ie.css">
+		<script type="text/javascript" src="js/bootstrap-ie.js"></script>
 	<![endif] -->
 </head>
 <body>
@@ -34,7 +36,7 @@
 		<ul class="dropdown-menu">
 			<li><%= link_to "修改密码", edit_registration_path(:user) %></li>
 			<li><%= link_to "个人中心", "#" %></li>
-			<li><%= link_to "购物车", "#" %><span class="btto"><%= link_to "2", "#", class: "badge badge-important" %></span></li>
+			<li><%= link_to "购物车", cart_path(@cart) %><span class="btto"><%=  link_to @cart.total_items, cart_path(@cart), class: "badge badge-important" %></span></li>
 			<li class="divider"></li>
 			<li><%= link_to "注销", destroy_user_session_path, :method => :delete %></li>
 		</ul>
@@ -55,9 +57,7 @@
 </div>
 
 
-
-		<p class="notice"><%= notice %></p>
-		<p class="alert"><%= alert %></p>
+<p class="alert"><%= alert %><%= notice %></p>
 		<ul class="breadcrumb">
 			<%= render_navigation(:renderer => :breadcrumbs, :join_with => '&nbsp / &nbsp') %>
 		</ul>

@@ -1,28 +1,5 @@
 #encoding:utf-8
 <% provide(:title, t('.product')) %>
-<div class="row-fluid">
-	<ul class="thumbnails">
-		<% @products.each do |product| %>
-
-		<li class="span4">
-		<div class="thumbnail">
-			<%= link_to image_tag(product.photos.first.image_url),product %>
-			<div class="caption">
-				<h3><%= product.title %></h3>
-				<small><%= product.number %></small>
-				<small><%= product.use %></small>
-				<p><%= truncate(product.content, length: 34) %></p>
-				<p>
-				<%= link_to t('.show'), product, class: "btn btn-primary" %>
-				<%= link_to 'Action', "#", class: "btn"%>
-				<% if admin_signed_in? %>
-					<%= link_to "Delete", product, method: :delete, confirm: "sure?", class: "btn btn-danger" %>
-				<% end %>
-				</p>
-			</div>
-		</div>
-		</li>
-	<% end %>
-	</ul>
-</div>
+<%= render partial: 'products/list', locals: {products: @products} %>
+<%= will_paginate @products %>
 <%= link_to t('.new_product'), new_product_path %>

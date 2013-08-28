@@ -2,14 +2,33 @@ class ProductsController < ApplicationController
 	before_filter :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
 	before_filter :authenticate_user!, only: [:index, :show]
 	def index
-		@products = Product.order("id desc").paginate(page: params[:page], per_page: 12)
-		@products.each do |product|
-			product.photos.build
+		unless params[:t]
+			@products = Product.order("id desc").paginate(page: params[:page], per_page: 12)
+		else
+			@products = Product.where("list_id = ? ", params[:t]).order("id desc").paginate(page: params[:page], per_page: 12)
 		end
+			@products.each do |product|
+				product.photos.build
+			end
 	end
 
 	def show
 		@product = Product.find(params[:id])
+		@product.increment!(:view_count)
+	end
+
+
+	def search 
+		begin
+		@products = Product.where("title like ? or number like ?",
+		'%'+params[:q]+'%','%'+params[:q]+'%').order("id desc").paginate(page: params[:page], per_page: 12)
+
+			if @products.empty?
+				redirect_to products_path, notice: t("products.no_match_products")
+			else
+				render 'index'
+			end
+		end
 	end
 
 	def new

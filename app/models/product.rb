@@ -22,5 +22,6 @@ class Product < ActiveRecord::Base
 	validates :load, presence: true
 
 	has_many :photos
+	has_many :line_items
 	accepts_nested_attributes_for :photos
 end

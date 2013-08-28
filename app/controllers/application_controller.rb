@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 	before_filter :set_i18n_locale_from_params
   protect_from_forgery
-
+	before_filter :find_cart
 	protected
 
 	def set_i18n_locale_from_params
@@ -17,6 +17,20 @@ class ApplicationController < ActionController::Base
 
 	def default_url_options
 		{locale: I18n.locale}
+	end
+
+	private
+
+	def current_cart
+		Cart.find(session[:cart_id])
+	rescue ActiveRecord::RecordNotFound
+		cart = Cart.create
+		session[:cart_id] = cart.id
+		cart
+	end
+	
+	def find_cart
+		@cart = current_cart
 	end
 end
 

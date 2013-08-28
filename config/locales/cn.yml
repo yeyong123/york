@@ -9,6 +9,7 @@
     index:
       product: "产品中心"
       new_product: "发布新产品"
+      cart: "加入购物车"
     new:
       back: "返回"    
     form:
@@ -17,3 +18,5 @@
       error: "错误"
       prohibited_this_product_from_being_saved: "禁止该产品保存"
       submit: "发布"
+    list:
+      cart: "加入购物车"
