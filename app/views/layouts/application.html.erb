@@ -58,12 +58,22 @@
 
 		<p class="notice"><%= notice %></p>
 		<p class="alert"><%= alert %></p>
-		<div class="breadcrumb">
-			<%= render_navigation(:renderer => :breadcrumbs, :join_with => ' &raquo; ') %>
-		</div>
+		<ul class="breadcrumb">
+			<%= render_navigation(:renderer => :breadcrumbs, :join_with => '&nbsp / &nbsp') %>
+		</ul>
 		<div class="container">
 			<%= yield %>
 		</div>
-
+		<footer>
+		<div class="hero-unit">
+			<h1>TODO</h1>
+			<p>pending</p>
+			<p>
+			<a class="btn btn-primary btn-large">
+				GO
+			</a>
+			</p>
+		</div>
+		</footer>
 		</body>
 </html>
