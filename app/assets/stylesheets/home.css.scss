@@ -19,6 +19,7 @@ footer {
 }
 .btto {
 	float: left;
+	font-size: 14px;
 	margin: -23px 0 0 100px;
 }
 #set_locale {
@@ -30,3 +31,8 @@ footer {
 	margin-bottom: 6px;
 	border: 1px solid;
 }
+.btto .badge {
+	width: 3px;
+
+}
+

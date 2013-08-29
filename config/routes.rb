@@ -7,6 +7,7 @@ York::Application.routes.draw do
 	resources :carts
 	resources :line_items
 	resources :products
+	resources :product_users
 	match '/search' => 'products#search'
 	root to: 'home#index'
 	end

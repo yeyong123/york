@@ -6,9 +6,8 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 	<!--[if lt IE 9]>
-		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-ie6.css">
-	 	<link rel="stylesheet" type="text/css" href="bootstrap/css/ie.css">
-		<script type="text/javascript" src="js/bootstrap-ie.js"></script>
+		<link rel="stylesheet" type="text/css" href="/assets/bootstrap-ie6.css">
+	 	<link rel="stylesheet" type="text/css" href="/assets/ie.css">
 	<![endif] -->
 </head>
 <body>
@@ -35,7 +34,7 @@
 		<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user"></i><%= current_user.name %><b class="caret"></b></a> 
 		<ul class="dropdown-menu">
 			<li><%= link_to "修改密码", edit_registration_path(:user) %></li>
-			<li><%= link_to "个人中心", "#" %></li>
+			<li><%= link_to "个人中心", product_users_path %></li>
 			<li><%= link_to "购物车", cart_path(@cart) %><span class="btto"><%=  link_to @cart.total_items, cart_path(@cart), class: "badge badge-important" %></span></li>
 			<li class="divider"></li>
 			<li><%= link_to "注销", destroy_user_session_path, :method => :delete %></li>
@@ -68,7 +67,9 @@
 		<div class="hero-unit">
 			<h1>TODO</h1>
 			<p>pending</p>
-			<p>
+
+					<p>
+
 			<a class="btn btn-primary btn-large">
 				GO
 			</a>
@@ -76,4 +77,6 @@
 		</div>
 		</footer>
 		</body>
+	<script type="text/javascript" src="/assets/bootstrap-ie.js"></script>
+
 </html>

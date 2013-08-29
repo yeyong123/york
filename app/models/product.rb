@@ -23,5 +23,6 @@ class Product < ActiveRecord::Base
 
 	has_many :photos
 	has_many :line_items
+	has_many :product_users
 	accepts_nested_attributes_for :photos
 end
