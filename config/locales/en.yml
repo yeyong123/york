@@ -8,3 +8,23 @@ en:
       submit: "Submit"
     index: 
       product: "Product"
+  layouts:
+    application:
+      home: "Home"
+      product: "Products"
+      about: "About"
+      contact: "Contact"
+  products:
+    index: 
+      product: "Products"
+      new_product: "New Product"
+      cart: "Join Cart"
+    new: 
+      back: "Back"
+    form:
+      have: "Have"
+      number: "number"
+      error: "Error"
+      submit: "Submit"
+    list:
+      cart: "Join Cart"

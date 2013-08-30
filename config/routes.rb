@@ -4,6 +4,9 @@ York::Application.routes.draw do
   devise_for :users
 
   devise_for :admins
+
+	delete 'likes/:resource_name/:resource_id' => "likes#destroy", as: 'like'
+	post 'likes/:resource_name/:resource_id' => "likes#create", as: 'like'
 	resources :carts
 	resources :line_items
 	resources :products

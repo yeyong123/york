@@ -1,0 +1,8 @@
+<table class="table">
+<% @user.product_users.each do |pro| %>
+	<tr>
+		<td><%= pro.quantity %>&times;</td>
+		<td><%= pro.product.title %></td>
+	</tr>
+<% end %>
+<table>

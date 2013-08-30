@@ -13,6 +13,7 @@
 #
 
 class Product < ActiveRecord::Base
+	include Likeable
   attr_accessible :content, :load, :number, :title, :use, :photos_attributes
 
 	validates :title, presence: true, length: { maximum: 50 }

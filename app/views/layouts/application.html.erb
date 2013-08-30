@@ -5,10 +5,6 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-	<!--[if lt IE 9]>
-		<link rel="stylesheet" type="text/css" href="/assets/bootstrap-ie6.css">
-	 	<link rel="stylesheet" type="text/css" href="/assets/ie.css">
-	<![endif] -->
 </head>
 <body>
 	<div class="set_locale navbar-fixed-top">
@@ -30,8 +26,8 @@
 	<li><%= link_to t('.about'), "#" %></li>
 	<li><%= link_to t('.contact'), "#" %></li>
 	<% if user_signed_in? %>
-		<li class="dropdown">
-		<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user"></i><%= current_user.name %><b class="caret"></b></a> 
+		<li class="btn-group">
+		<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user"></i><%= current_user.name %><b class="caret"></b></a> 
 		<ul class="dropdown-menu">
 			<li><%= link_to "修改密码", edit_registration_path(:user) %></li>
 			<li><%= link_to "个人中心", product_users_path %></li>
@@ -77,6 +73,4 @@
 		</div>
 		</footer>
 		</body>
-	<script type="text/javascript" src="/assets/bootstrap-ie.js"></script>
-
 </html>

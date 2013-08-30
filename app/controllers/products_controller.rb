@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
 	before_filter :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
-	before_filter :authenticate_user!, only: [:index, :show]
 	def index
 		unless params[:t]
 			@products = Product.order("id desc").paginate(page: params[:page], per_page: 12)
@@ -51,7 +50,7 @@ class ProductsController < ApplicationController
 
 	def update
 		@product = Product.find(params[:id])
-		if @product.update(params[:product])
+		if @product.update_attributes(params[:product])
 			redirect_to product_path
 		else
 			render 'edit'
