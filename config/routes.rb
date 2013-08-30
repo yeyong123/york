@@ -11,6 +11,7 @@ York::Application.routes.draw do
 	resources :line_items
 	resources :products
 	resources :product_users
+	match '/like' => 'products#like'
 	match '/search' => 'products#search'
 	root to: 'home#index'
 	end

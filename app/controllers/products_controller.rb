@@ -16,6 +16,11 @@ class ProductsController < ApplicationController
 		@product.increment!(:view_count)
 	end
 
+	def like
+	@user = current_user
+	@products = @user.all_liked(Product)
+		end
+
 
 	def search 
 		begin

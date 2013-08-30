@@ -12,4 +12,5 @@ class LikesController < ApplicationController
 		redirect_to :back, notice: "success"
 	end
 
+
 end
