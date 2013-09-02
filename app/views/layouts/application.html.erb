@@ -31,7 +31,6 @@
 		<ul class="dropdown-menu">
 			<li><%= link_to "修改密码", edit_registration_path(:user) %></li>
 			<li><%= link_to "个人中心", product_users_path %></li>
-			<li><%= link_to "购物车", cart_path(@cart) %><span class="btto"><%=  link_to @cart.total_items, cart_path(@cart), class: "badge badge-important" %></span></li>
 			<li class="divider"></li>
 			<li><%= link_to "注销", destroy_user_session_path, :method => :delete %></li>
 		</ul>
@@ -47,8 +46,27 @@
 <input type="text" name="q" value="" class="serach-query" placeholder="search">
 		<button type="submit" class="btn no-btn btn-info"><%= t('.search') %></button>
 	</form>
+	<div class="nav-ccc">
+		<nav class="nav-ddd">
+		<ul>
+		<li class="nav-index">
+			<span>
+			<%= link_to @cart.total_items, cart_path(@cart), class: "badge badge-important" %>
+			</span>
+				<i class="icon-shopping-cart"></i>
+				<%= link_to "购物车", cart_path(@cart)  %>
+				<ul>
+					<li>
+					<%= render partial: "carts/list", locals: {carts: @carts} %>
+					</li>
+								</ul>
+				</li>
+			</ul>
+			</nav>
+		</div>
 </div>
 </div>
+
 </div>
 
 

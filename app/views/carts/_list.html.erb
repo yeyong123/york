@@ -1,0 +1,16 @@
+<% if @cart.line_items.empty? %>
+	<small>ds</small>
+<% else %>
+<table class="table">
+		<% @cart.line_items.each do |item| %>
+		<tr>
+			<td><%= image_tag(item.product.photos.first.image_url) %></td>
+			<td><%= item.product.title %></td>
+			<td><%= item.quantity %></td>
+		</tr>
+<% end %>
+<div style="float: right; margin-right: 10px">
+<%= link_to "empty cart", cart_path(@cart), method: :delete, confirm: "确定删除", class: "btn btn-danger" %> 
+</div>
+</table>
+<% end %>

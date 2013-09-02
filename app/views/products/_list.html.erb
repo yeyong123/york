@@ -2,11 +2,11 @@
 	<ul class="thumbnails">
 		<% products.each do |product| %>
 
-		<li class="span4">
+		<li>
 		<div class="thumbnail">
 			<%= link_to image_tag(product.photos.first.image_url),product %>
 			<div class="caption">
-				<h3><%= product.title %></h3>
+				<h5><%= product.title %></h5>
 				<small><%= product.number %></small>
 				<small><%= product.use %></small>
 				<p><%= truncate(product.content, length: 34) %></p>
@@ -14,12 +14,14 @@
 
 				<% if current_user.try(:likes?, product) %>
 					<%= unlike_link_for(product) %>
+					<i class="icon-thumbs-down"></i>
 					<font style="color: red">
 						<%= product.like_count %></font>
 					<%= t('.like') %>
 				<% else %>
 					<% if current_user.present? %>
 						<%= like_link_for product %>
+						<i class="icon-thumbs-up"></i>
 						<font style="color: red">
 							<%= product.like_count %></font>
 						<%= t('.like') %>
@@ -37,7 +39,7 @@
 				<% if admin_signed_in? %>
 					<%= link_to "Delete", product, method: :delete, confirm: "sure?", class: "btn btn-danger" %>
 				<% else %>
-					<%= button_to t('.cart'), line_items_path(product_id: product), class: "btn"%>
+					<%= button_to t('.cart'), line_items_path(product_id: product), class: "btn" %>
 					<% end %>
 				</p>
 			</div>

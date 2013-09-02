@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130830012437) do
+ActiveRecord::Schema.define(:version => 20130902021642) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(:version => 20130830012437) do
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
     t.integer  "quantity",   :default => 1
-    t.integer  "user_id"
   end
 
   create_table "photos", :force => true do |t|
@@ -68,9 +67,10 @@ ActiveRecord::Schema.define(:version => 20130830012437) do
     t.text     "content"
     t.string   "use"
     t.string   "load"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-    t.integer  "view_count", :default => 0
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.integer  "view_count",  :default => 0
+    t.integer  "liked_count", :default => 0
   end
 
   create_table "users", :force => true do |t|

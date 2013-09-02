@@ -31,4 +31,34 @@ footer {
 	margin-bottom: 6px;
 	border: 1px solid;
 }
-
+.nav-index{
+	list-style: none;
+	float: right;
+}
+.nav-index {
+	position: relative;
+}
+.nav-index ul {
+	list-style: none;
+	display: block;
+	position: absolute;
+	
+}
+.nav-index ul {
+	display: none;
+	position: absolute;
+	left: -100%;
+	top: 100%;
+}
+.nav-index:hover > ul {
+	display: block;
+}
+.nav-index ul li {
+	background: #e8e8e8;
+	width: 300px;
+}
+.well {
+	height: 30px;
+	padding: 0 0 5px 0;
+	margin-bottom: 0;
+}

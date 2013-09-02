@@ -43,6 +43,7 @@ class CartsController < ApplicationController
 		end
 	end
 
+
 	def destroy
 		@cart = current_cart
 		@cart.destroy

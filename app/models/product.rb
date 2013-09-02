@@ -14,8 +14,7 @@
 
 class Product < ActiveRecord::Base
 	include Likeable
-  attr_accessible :content, :load, :number, :title, :use, :photos_attributes
-
+  attr_accessible :content, :load, :number, :title, :use, :photos_attributes, :liked_count
 	validates :title, presence: true, length: { maximum: 50 }
 	validates :number, presence: true, uniqueness: true
 	validates :content, presence: true
@@ -26,4 +25,7 @@ class Product < ActiveRecord::Base
 	has_many :line_items
 	has_many :product_users
 	accepts_nested_attributes_for :photos
+
+
+	
 end

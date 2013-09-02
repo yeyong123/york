@@ -5,6 +5,6 @@ module LikesHelper
 	end
 
 	def unlike_link_for(target)
-		link_to t("likes.unlike"), like_path(resource_name: target.class, resource_id: target.id), method: :delete, class: "btn btn-mini"
+		link_to t("likes.unlike"), like_path(resource_name: target.class, resource_id: target.id), method: :delete, class: "btn btn-mini btn-danger"
 	end
 end

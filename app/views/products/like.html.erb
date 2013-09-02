@@ -1,1 +1,5 @@
-<%= render partial: "products/list", locals: {products: @products } %>
+<% if @user.all_liked(Product).nil? %>
+	<p>ds</p>
+<% else %>
+	<%= render partial: "products/list", locals: {products: @products } %>
+<% end %>

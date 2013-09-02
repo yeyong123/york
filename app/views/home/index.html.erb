@@ -16,6 +16,14 @@
 </div>
 <script>
 	$('.carousel').carousel({
-		  interval: 2000
+		  interval: 5000
 		})
 </script>
+<div class="well">
+	<h5 style="text-align: center">关注最多</h2>
+</div>
+<%= render partial: 'products/liked_list', locals: {products: @products} %>
+<div class="well">
+	<h5 style="text-align: center">访问最多</h2>
+</div>
+<%= render partial: 'product_users/visit_list', locals: {products: @products} %>

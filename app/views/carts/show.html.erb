@@ -1,13 +1,5 @@
 #encoding:utf-8
 <div>Cart</div>
-<table class="table">
-	<% @cart.line_items.each do |item| %>
-		<tr>
-			<td><%= item.quantity %>&times;</td>
-			<td><%= item.product.title %></td>
-		</tr>
-	<% end %>
-</table>
-<%= button_to "delete", cart_path, method: :delete, confirm: "Sure?" %>
+	<%= render 'list' %>
 
 
