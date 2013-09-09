@@ -1,5 +1,16 @@
+# == Schema Information
+#
+# Table name: carts
+#
+#  id             :integer          not null, primary key
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  remember_token :string(255)
+#
+
 class Cart < ActiveRecord::Base
-  # attr_accessible :title, :body
+  # attr_accessible :title, :bodyhas_many :line_items, dependent: :destroy
+	belongs_to :user
 	has_many :line_items, dependent: :destroy
 
 	def add_product(product_id)
@@ -11,9 +22,8 @@ class Cart < ActiveRecord::Base
 		end
 		current_item
 	end
-	
+
 	def total_items
 		line_items.sum(:quantity)
 	end
-
 end

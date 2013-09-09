@@ -1,0 +1,20 @@
+<nav class="nav-drop">
+<h3><%= t('.nav') %></h3>
+<ul>
+	<% Category.all.each do |cate| %>
+		<li>
+		<%= link_to cate.name, category_path(cate.id) %>
+		<ul>
+			<% cate.tags.each do |tag| %>
+				<li>
+				<%= link_to tag.name, tags_path(t:tag) %>
+				<% tag.lists.each do |list| %>
+					<%= link_to list.name, products_path(t:list) %>
+				<% end %>
+			<% end %>
+			</li>
+		</ul>
+		</li>
+	<% end %>
+</ul>
+</nav>

@@ -14,6 +14,7 @@ gem 'twitter-bootstrap-rails'
 gem 'jquery-ui-rails'
 gem 'likeable'
 gem 'redis'
+gem 'acts_as_shopping_cart'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'

@@ -7,10 +7,12 @@ York::Application.routes.draw do
 
 	delete 'likes/:resource_name/:resource_id' => "likes#destroy", as: 'like'
 	post 'likes/:resource_name/:resource_id' => "likes#create", as: 'like'
-	resources :carts
+	resource :cart
 	resources :line_items
 	resources :products
 	resources :product_users
+	resources :categories
+	match '/tags' => 'categories#tags'
 	match 'visit' => 'product_users#visit'
 	match '/like' => 'products#like'
 	match '/liked' => 'products#liked'

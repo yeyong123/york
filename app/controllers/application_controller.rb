@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
 	before_filter :set_i18n_locale_from_params
   protect_from_forgery
 	before_filter :find_cart
+
 	protected
 
 	def set_i18n_locale_from_params
@@ -22,15 +23,27 @@ class ApplicationController < ActionController::Base
 	private
 
 	def current_cart
-		Cart.find(session[:cart_id])
-		rescue ActiveRecord::RecordNotFound
-		cart = Cart.create
-		session[:cart_id] = cart.id
-		cart
+		if user_signed_in? && current_user
+			if current_user.cart.nil?
+				@cart = current_user.create_cart
+			else
+				@cart = Cart.find_by_user_id(session[:user_id])
+			end
+		else
+			Cart.find(session[:cart_id])
+		end
+	rescue ActiveRecord::RecordNotFound
+		@cart = Cart.create
+		session[:cart_id] = @cart.id
+		@cart
 	end
-	
+
 	def find_cart
-		@cart = current_cart
+		if user_signed_in? && current_user
+			@cart = current_user.cart
+		else
+			@cart = current_cart
+		end
 	end
 end
 

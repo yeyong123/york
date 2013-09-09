@@ -1,17 +1,15 @@
 # == Schema Information
 #
-# Table name: line_items
+# Table name: categories
 #
 #  id         :integer          not null, primary key
-#  cart_id    :integer
-#  product_id :integer
+#  name       :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  quantity   :integer          default(1)
 #
 
 require 'spec_helper'
 
-describe LineItem do
+describe Category do
   pending "add some examples to (or delete) #{__FILE__}"
 end

@@ -28,6 +28,8 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
+    acts_as_shopping_cart (0.1.6)
+      activerecord (~> 3.0)
     annotate (2.5.0)
       rake
     arel (3.0.2)
@@ -166,6 +168,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_shopping_cart
   annotate
   bootstrap-sass
   capybara

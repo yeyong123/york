@@ -17,6 +17,12 @@
 		<%= f.label :title %><br />
 		<%= f.text_field :title %>
 	</div>
+	<span>选择大类:</span> 
+	<%= collection_select(:tag, :category_id, Category.all, :id, :name) %><br />
+	<span>选择标签:</span>
+	<%= grouped_collection_select(:tag, :tag_id, Category.all, :tags, :id, :id, :name) %><br />
+	<span>选择分类:</span>
+	<%= grouped_collection_select(:product, :list_id, Tag.all, :lists, :id, :id, :name) %><br />
 	<div class="field">
 		<%= f.label :number %><br />
 		<%= f.text_field :number %>
@@ -43,5 +49,14 @@
 		<%= f.submit t('.submit'),class: "btn btn-success" %>  <%= link_to t('.back'), products_path, class: "btn btn-primary" %>
 	</div>	
 <% end %>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#tag_tag_id').linkSelect();
+		$('#product_list_id').linkSelect();
+	});
+</script>
+
+
 
 

@@ -50,14 +50,13 @@
 		<nav class="nav-ddd">
 		<ul>
 		<li class="nav-index">
-			<span>
-			<%= link_to @cart.total_items, cart_path(@cart), class: "badge badge-important" %>
+			<span class="badge badge-important">
+				<%= @cart.total_items %>
 			</span>
 				<i class="icon-shopping-cart"></i>
-				<%= link_to "购物车", cart_path(@cart)  %>
+				<%= link_to "购物车", cart_path  %>
 				<ul>
 					<li>
-					<%= render partial: "carts/list", locals: {carts: @carts} %>
 					</li>
 								</ul>
 				</li>
@@ -88,6 +87,7 @@
 				GO
 			</a>
 			</p>
+			<%= render 'products/nav_list' %>
 		</div>
 		</footer>
 		</body>

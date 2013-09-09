@@ -2,14 +2,17 @@
 #
 # Table name: products
 #
-#  id         :integer          not null, primary key
-#  title      :string(255)
-#  number     :string(255)
-#  content    :text
-#  use        :string(255)
-#  load       :string(255)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :integer          not null, primary key
+#  title       :string(255)
+#  number      :string(255)
+#  content     :text
+#  use         :string(255)
+#  load        :string(255)
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  view_count  :integer          default(0)
+#  liked_count :integer          default(0)
+#  list_id     :integer
 #
 
 require 'spec_helper'
