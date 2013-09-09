@@ -1,48 +1,24 @@
-== Welcome to Rails
+== 欢迎来到Robt
 
-Rails is a web-application framework that includes everything needed to create
-database-backed web applications according to the Model-View-Control pattern.
+主要功能：
+  1. 购物车
+  2. 喜欢功能
+  3. 邮件推送
+== 功能详细
 
-This pattern splits the view (also called the presentation) into "dumb"
-templates that are primarily responsible for inserting pre-built data in between
-HTML tags. The model contains the "smart" domain objects (such as Account,
-Product, Person, Post) that holds all the business logic and knows how to
-persist themselves to a database. The controller handles the incoming requests
-(such as Save New Account, Update Product, Show Post) by manipulating the model
-and directing data to the view.
-
-In Rails, the model is handled by what's called an object-relational mapping
-layer entitled Active Record. This layer allows you to present the data from
-database rows as objects and embellish these data objects with business logic
-methods. You can read more about Active Record in
-link:files/vendor/rails/activerecord/README.html.
-
-The controller and view are handled by the Action Pack, which handles both
-layers by its two parts: Action View and Action Controller. These two layers
-are bundled in a single package due to their heavy interdependence. This is
-unlike the relationship between the Active Record and Action Pack that is much
-more separate. Each of these packages can be used independently outside of
-Rails. You can read more about Action Pack in
-link:files/vendor/rails/actionpack/README.html.
-
-
-== Getting Started
-
-1. At the command prompt, create a new Rails application:
-       <tt>rails new myapp</tt> (where <tt>myapp</tt> is the application name)
-
-2. Change directory to <tt>myapp</tt> and start the web server:
-       <tt>cd myapp; rails server</tt> (run with --help for options)
-
-3. Go to http://localhost:3000/ and you'll see:
-       "Welcome aboard: You're riding Ruby on Rails!"
-
-4. Follow the guidelines to start developing your application. You can find
-the following resources handy:
-
-* The Getting Started Guide: http://guides.rubyonrails.org/getting_started.html
-* Ruby on Rails Tutorial Book: http://www.railstutorial.org/
-
+一. 购物车
+  1. 已经登陆用户的当前的购物车。
+    （1）. 查找当前用户，和当前用户的购物车，购物车和用户是一对一的关系
+     一个用户只能有一个购物车。当用户登陆，就找到当前用户的当前购物车。
+     并且显示用户以前添加的产品但没有结算的产品的总数。用户可以根据自己
+     的需要来更改购物车中的的产品。
+     （2）. 新用户注册，就分配一个与用户关联的购物车ID,这个ID是唯一，就
+     只能是这个用户的。当用户在注册之前就已经有添加产品到购物车，就着到
+     这个购物车的session的ID。并将这个session的ID加到新注册用户的当前购
+     物车的ID中，并且删除先前创建的session的ID，之后当这个用户登陆的时候
+     ，就查找这个用户和这个用户的当前购物车的ID。
+     （3）. 没有登陆的访客，也可以使用购物车，但是不会记录到数据库中。
+     当用户退出的时候，购物车也随即销毁。
 
 == Debugging Rails
 
