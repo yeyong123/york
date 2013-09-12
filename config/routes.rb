@@ -11,6 +11,7 @@ York::Application.routes.draw do
 	resources :line_items
 	resources :products
 	resources :product_users
+	resources :orders
 	resources :categories
 	match '/tags' => 'categories#tags'
 	match 'visit' => 'product_users#visit'

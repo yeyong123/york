@@ -8,6 +8,7 @@
 		</tr>
 	<% end %>
 <div style="float: right; margin-right: 10px">
+	<%= button_to "付款", new_order_path, method: :get %>
 <%= link_to "empty cart", cart_path(@cart), method: :delete, confirm: "确定删除", class: "btn btn-danger" %> 
 </div>
 </table>

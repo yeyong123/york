@@ -1,0 +1,79 @@
+//最顶上的登录注册栏
+.index-top {
+	height: 20px;
+	border: 1px solid;
+}
+.index-top ul {
+	list-style: none;
+	margin-left: 10px;
+}
+.index-top li {
+	float: left;
+	margin-right: 5px;
+}
+.index-top li:last-child {
+	float: right;
+	margin-right: 10px;
+}
+// Logo 的位置
+.index-logo {
+	height: 100px;
+	border: 1px solid;
+}
+.index-logo img {
+	float: left;
+	margin: 10px 10px 0 20px;
+}
+.index-logo span {
+	font-style: bold;
+	font-size: 16pt;
+}
+.index-logo.logo-font {
+	float: left;
+}
+.logo-font {
+	margin-top: 30px;
+	width: 400px;
+}
+.index-logo .ps-index:first-child {
+	float: left;
+}
+.index-logo .ps-index:last-child {
+	float: right;
+}
+
+//导航栏
+.index-nav {
+	height: 40px;
+	border: 1px solid;
+	background: #770;
+}
+.index-nav ul {
+	margin: 8px 0 0 20px;
+	list-style: none;
+}
+.index-nav li {
+	float: left;
+	margin-right: 30px;
+}
+.index-nav li button {
+	background: #770;
+	border-style: none;
+	margin-top: -12px;
+}
+.index-nav li input {
+	margin-top: -3px;
+	width: 300px;
+}
+.index-nav i {
+}
+//热门搜索
+.search-font {
+	border: 1px solid;
+	height: 22px;
+	padding: 0;
+}
+.search-font small {
+	float: left;
+	margin-left: 480px;
+}

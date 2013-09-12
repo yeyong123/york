@@ -1,0 +1,15 @@
+<table class="table">
+	<% @orders.each do |order| %>
+		<tr>
+			<td>	<%= order.name %></td>
+			<td><%= order.email %></td>
+			<td><%= order.phone %></td>
+			<td><%= order.address %></td>
+			<td><%= link_to "show", order %></td>
+			<td><%= link_to "edit", edit_order_path(order) %></td>
+			<td><%= link_to "delete", order, method: :delete, confirm: "Are you sure?" %></td>
+		</tr>
+	<%end %>
+	</table>
+	<br />
+	<%= link_to "New", new_order_path %>
