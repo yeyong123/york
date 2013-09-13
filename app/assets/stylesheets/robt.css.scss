@@ -46,7 +46,9 @@
 .index-nav {
 	height: 40px;
 	border: 1px solid;
-	background: #770;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ff4f02), color-stop(1, #8f2c00));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#8f2c00', StartColorStr='#ff4f02');
+
 }
 .index-nav ul {
 	margin: 8px 0 0 20px;
@@ -57,7 +59,7 @@
 	margin-right: 30px;
 }
 .index-nav li button {
-	background: #770;
+	background: none;
 	border-style: none;
 	margin-top: -12px;
 }
