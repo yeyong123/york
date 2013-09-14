@@ -1,3 +1,20 @@
+<script type="text/javascript">
+	$(document).ready(function() {
+			jQuery.jqtab = function(tabtit,tab_conbox,shijian) {
+			$(tab_conbox).find("li").hide();
+			$(tabtit).find("li:first").addClass("thistab").show(); 
+			$(tab_conbox).find("li:first").show();
+			$(tabtit).find("li").bind(shijian,function(){
+				$(this).addClass("thistab").siblings("li").removeClass("thistab"); 
+				var activeindex = $(tabtit).find("li").index(this);
+				$(tab_conbox).children().eq(activeindex).show().siblings().hide();
+				return false;
+				});
+			};
+			$.jqtab("#tabs","#tab_conbox","click");
+			$.jqtab("#tabs2","#tab_conbox2","click");
+	});
+</script>
 <!-- 调试 -->
 <div class="index-top">
 	<ul>
@@ -65,7 +82,66 @@
 		<div id="pic" style="width:745px;height:297px;margin:auto">	
 	</div>
 </div>
-<%= render 'index_products' %>
+
+		
+	<div class="show-product">
+	<div id="tabbox">
+	<ul class="tabs" id="tabs">
+		<ol>高空作业</ol>	
+		<li><a href="#">桅柱式高空作业平台</li>
+		<li><a href="#">剪叉式高空作业平台</a></li>
+		<li><a href="#">直臂式高空作业平台</a></li>
+		<li><a href="#">曲臂式高空作业平台</a></li>
+		<li><a href="#">高位取货车</a></li>
+		<li><a href="#">工业用梯</a></li>
+		</ul>
+		<ul class="tab_conbox" id="tab_conbox">
+			<li class="tab_con">
+			<img src="assets/6.jpg" />
+			<img src="assets/6.jpg" />
+			<img src="assets/6.jpg" />
+			<img src="assets/6.jpg" />
+			</li>
+			<li class="tab_con">
+			<img src="assets/6.jpg"/>
+			</li>
+<li class="tab_con">
+			<img src="assets/2.jpg"/>
+<img src="assets/2.jpg"/>
+<img src="assets/2.jpg"/>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="show-product">
+	<div id="tabbox">
+	<ul class="tabs" id="tabs2">
+		<li>高空作业</li>	
+		<li><a href="#">桅柱式高空作业平台</li>
+		<li><a href="#">剪叉式高空作业平台</a></li>
+		<li><a href="#">直臂式高空作业平台</a></li>
+		<li><a href="#">曲臂式高空作业平台</a></li>
+		<li><a href="#">高位取货车</a></li>
+		<li><a href="#">工业用梯</a></li>
+		</ul>
+		<ul class="tab_conbox" id="tab_conbox2">
+			<li class="tab_con">
+			<img src="assets/6.jpg" />
+			<img src="assets/6.jpg" />
+			<img src="assets/6.jpg" />
+			<img src="assets/6.jpg" />
+			</li>
+			<li class="tab_con">
+			<img src="assets/6.jpg"/>
+			</li>
+<li class="tab_con">
+			<img src="assets/2.jpg"/>
+<img src="assets/2.jpg"/>
+<img src="assets/2.jpg"/>
+			</li>
+		</ul>
+	</div>
+</div>
 <div class="footer-nav">
 	<div class="about-us">
 	<ul>

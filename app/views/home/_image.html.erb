@@ -1,0 +1,18 @@
+<script>
+		// 需要你写的数据
+		var data = [
+		<% Product.all.each do |product| %>
+			{title:"<%= product.title %>",desc:'立刻加入我们',src:"<%= product.photos.first.image_url%>"},
+	<% end %>
+		];
+		$(document).ready(function(){
+			$('#pic').d_imagechange({
+				data:data,
+				width:785,
+				height:297,
+				animateStyle:'o',
+				animateTime:1000,
+			});
+		});
+	</script>
+

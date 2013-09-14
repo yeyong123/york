@@ -1,0 +1,40 @@
+<% Category.all.each_with_index do |cate, index| %>
+	<div class="show-product">
+		<div id="tabbox">
+			<ul class="tabs" id="tabs<%=index%>">
+				<ol><%= cate.name %></ol>
+				<% cate.tags.each do |tag| %>
+					<li><%= link_to tag.name, "#" %></li>
+				<% end %>
+			</ul>
+			<% cate.tags.each do |tag| %>
+				<% tag.lists.each do |list| %>
+					<% list.products.each do |product| %>
+						<ul class="tab_conbox" id="tab_conbox<%= index %>">
+							<li class="tab_con">
+							<%= image_tag(product.photos.first.image_url) %>
+							</li>
+						</ul>
+					<% end %>
+				<% end %>
+			<% end %>
+
+		</div>
+	</div>
+	<script type="text/javascript">
+	$(document).ready(function() {
+			jQuery.jqtab = function(tabtit,tab_conbox,shijian) {
+			$(tab_conbox).find("li").hide();
+			$(tabtit).find("li:first").addClass("thistab").show(); 
+			$(tab_conbox).find("li:first").show();
+			$(tabtit).find("li").bind(shijian,function(){
+				$(this).addClass("thistab").siblings("li").removeClass("thistab"); 
+				var activeindex = $(tabtit).find("li").index(this);
+				$(tab_conbox).children().eq(activeindex).show().siblings().hide();
+				return false;
+				});
+			};
+			$.jqtab("#tabs<%=index%>","#tab_conbox<%=index%>","click");
+	});
+</script>
+<% end %>
