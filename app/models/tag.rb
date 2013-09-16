@@ -10,7 +10,8 @@
 #
 
 class Tag < ActiveRecord::Base
-  attr_accessible :category_id, :name
-	has_many :lists
+  attr_accessible :category_id, :name, :lists_attributes
+	has_many :lists, dependent: :destroy
 	belongs_to :category
+	accepts_nested_attributes_for :lists
 end

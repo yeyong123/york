@@ -1,0 +1,21 @@
+<%= form_for @category do |f| %>
+	<div class="field">
+		<%= f.label :name %><br />
+		<%= f.select :name, Category::Name %>
+	</div>
+	<%= f.fields_for :tags do |tag| %>
+		<div class="field">
+		<%= tag.label :Tagname %><br />
+		<%= tag.text_field :name %>
+	</div>
+	<%= tag.fields_for :lists do |list| %>
+		<div class="field">
+			<%= list.label :Listname %><br />
+			<%= list.text_field :name %>
+		<% end %>
+	</div>
+	<% end %>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>
