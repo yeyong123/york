@@ -74,8 +74,8 @@
 		</ul>
 <div class="index-top">
 	<ul>
-		<li>登录 |</li>
-		<li>注册</li>
+		<li><%= link_to "登录", new_session_path(:user) %>|</li>
+		<li><%= link_to "注册", new_registration_path(:user) %></li>
 		<li>English</li>
 	</ul>
 </div>
@@ -104,12 +104,12 @@
 <div class="index-nav">
 	<div class="center-index">
 	<ul>
-		<li>			首页	 </li>
-		<li>	 产品中心	 </li>
-		<li>	 关于我们	 </li>
-		<li>	 服务中心	 </li>
-		<li>			新闻	 </li>
-		<li>	 联系我们  </li>
+		<li><%= link_to "首页", root_path %></li>
+		<li><%= link_to "产品中心", products_path	%> </li>
+		<li><%= link_to "关于我们", "#" %></li>
+		<li><%= link_to "服务中心", "#" %>	 </li>
+		<li><%= link_to "新闻", "#" %></li>
+		<li><%= link_to "联系我们", "#" %>  </li>
 		<li class="form-search">	
 <form action="/search" method="get">
 			<i class="icon-search icon-white"></i>
@@ -120,7 +120,7 @@
 			</li>
 		<li>
 		<span class="badge badge-important">
-			0
+			<%= link_to @cart.total_items, cart_path %>
 		</span>
 		<i class="icon-shopping-cart icon-white"></i>
 			</li>

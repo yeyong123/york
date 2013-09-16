@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20130916030913) do
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
     t.integer  "quantity",   :default => 1
+    t.integer  "user_id"
     t.integer  "order_id"
   end
 
