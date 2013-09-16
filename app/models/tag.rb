@@ -14,4 +14,5 @@ class Tag < ActiveRecord::Base
 	has_many :lists, dependent: :destroy
 	belongs_to :category
 	accepts_nested_attributes_for :lists
+	
 end

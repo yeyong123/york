@@ -1,5 +1,11 @@
 York::Application.routes.draw do
+  
+
+  
+
+ 
 		scope '(:locale)' do
+ mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   devise_for :users
 

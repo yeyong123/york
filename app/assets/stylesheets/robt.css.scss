@@ -22,7 +22,10 @@
 .index-logo {
 	height: 100px;
 	border: 1px solid;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(30%, #dcd9c7), color-stop(10%, #f6f6f1));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#9f7925', StartColorStr='#aa8430');
 }
+
 .index-logo img {
 	float: left;
 	margin: 10px 10px 0 20px;
@@ -50,8 +53,8 @@
 .index-nav {
 	height: 40px;
 	border: 1px solid;
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ff4f02), color-stop(1, #8f2c00));
-	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#8f2c00', StartColorStr='#ff4f02');
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #00452a), color-stop(10%, #005b37));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#00452a', StartColorStr='#005b37');
 
 }
 .index-nav ul {
@@ -59,6 +62,7 @@
 	list-style: none;
 }
 .index-nav li {
+	color: white;
 	float: left;
 	margin-right: 30px;
 }
@@ -95,9 +99,11 @@
 	margin-bottom: 10px;
 }
 .nav-list h3 {
+	color: white;
 	margin: 0;
 	padding-left: 15px;
-	background: yellow;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(30%, #9f7925), color-stop(10%, #aa8430));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#9f7925', StartColorStr='#aa8430');
 }
 .nav-list ul {
 	list-style: none;
