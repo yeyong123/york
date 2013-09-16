@@ -10,9 +10,16 @@
 			<ul class="tab_conbox" id="tab_conbox">
 				<% cate.tags.each do |tag| %>
 					<li class="tab_con">
+					<div class="row-fluid">
+						<ul class="thumbnails">
 					<% tag.lists.each do |list| %>
 						<% list.products.each do |product| %>
-							<%= image_tag(product.photos.first.image_url) %>
+							<li>
+							<div class="thumbnail">
+								<%= image_tag(product.photos.first.image_url) %>
+								<div class="caption">
+									<h5><%= product.title %></h5>
+									<small><%= product.number %></small>
 						<% end %>
 					<% end %>
 					</li>

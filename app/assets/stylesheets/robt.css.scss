@@ -9,6 +9,8 @@
 .index-top ul {
 	list-style: none;
 	margin-left: 10px;
+	width: 980px;
+	margin: auto;
 }
 .index-top li {
 	float: left;
@@ -41,6 +43,10 @@
 	margin-top: 30px;
 	width: 400px;
 }
+.center-index {
+	width: 980px;
+	margin: auto;
+}
 .index-logo .ps-index:first-child {
 	float: left;
 }
@@ -66,16 +72,6 @@
 	float: left;
 	margin-right: 30px;
 }
-.index-nav li button {
-	background: none;
-	color: white;
-	border-style: none;
-	margin-top: -12px;
-}
-.index-nav li input {
-	margin-top: -3px;
-	width: 300px;
-}
 .index-nav li:last-child{
 	float: right;
 }
@@ -99,6 +95,7 @@
 	border: 1px solid;
 	padding: 0;
 	float: left;
+	height: 297px;
 	margin-bottom: 10px;
 }
 .nav-list h4 {
@@ -116,6 +113,32 @@
 	margin-top: 8px;
 	border-bottom: 1px solid;
 	padding-bottom: 6px;
+	position: relative;
+}
+.nav-list li ul {
+	display: block;
+	position: absolute;
+	left: 83%;
+	top: 0;
+	z-index: 5;
+}
+.nav-list li ul {
+	display: none;
+	}
+.nav-list li ul {
+	width: 550px;
+	background: white;
+	border: 1px solid;
+}
+.nav-list li:hover > ul {
+	display: block;
+}
+.nav-list ul li ul li {
+	border-style: none;
+	float: left;
+	overflow: hide;
+	margin-left: 10px;
+	margin-top: 10px;
 }
 //首页展示图
 .index-img {
@@ -220,7 +243,7 @@
 }
 .list-nav h3 {
 	margin: 0;
-	border-bottom: 2px solid;
+	border-bottom: 2px solid #b2b2b2;
 }
 .list-nav ul {
 	margin-left: 35px;
@@ -279,12 +302,14 @@
 }
 //推荐词条
 .category-list {
-	border-bottom: 1px solid;
+	color: rgb(253,88,14);
+	border-bottom: 3px solid #b2b2b2;
 	margin-top: 5px;
 	padding-bottom: 5px;
 }
 //最地下的公司信息
 .footer-bottom  {
+	color: rgb(253,88,14);
 	margin-top: 5px;
 	text-align: center;
 }
@@ -363,4 +388,17 @@ a{
 }
 #tab_conbox {
 	margin-top: 5px;
+}
+//搜索表单
+.form-search {
+	margin-top: -3px;
+	height: 30px;
+}
+.form-search input {
+	width: 300px;
+}
+.form-search button {
+	background: none;
+	border-style: none;
+	color: white;
 }

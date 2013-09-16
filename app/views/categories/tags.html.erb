@@ -1,0 +1,6 @@
+<% @lists.each do |list| %>
+	<% list.products.each do |product| %>
+		<%= product.title %>
+		<%= image_tag(product.photos.first.image_url) %>
+	<% end %>
+<% end %>

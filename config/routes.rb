@@ -3,28 +3,25 @@ York::Application.routes.draw do
 
   
 
- 
-		scope '(:locale)' do
- mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
-  devise_for :users
-
-  devise_for :admins
-
-	delete 'likes/:resource_name/:resource_id' => "likes#destroy", as: 'like'
-	post 'likes/:resource_name/:resource_id' => "likes#create", as: 'like'
-	resource :cart
-	resources :line_items
-	resources :products
-	resources :product_users
-	resources :orders
-	resources :categories
-	match '/tags' => 'categories#tags'
-	match 'visit' => 'product_users#visit'
-	match '/like' => 'products#like'
-	match '/liked' => 'products#liked'
-	match '/search' => 'products#search'
-	root to: 'home#index'
+	scope '(:locale)' do
+		mount RailsAdmin::Engine => '/members', :as => 'rails_admin'
+		devise_for :admins
+		devise_for :users
+		delete 'likes/:resource_name/:resource_id' => "likes#destroy", as: 'like'
+		post 'likes/:resource_name/:resource_id' => "likes#create", as: 'like'
+		resource :cart
+		resources :line_items
+		resources :products
+		resources :product_users
+		resources :orders
+		resources :categories
+		match '/tags' => 'categories#tags'
+		match 'visit' => 'product_users#visit'
+		match '/like' => 'products#like'
+		match '/liked' => 'products#liked'
+		match '/search' => 'products#search'
+		root to: 'home#index'
 	end
   # The priority is based upon order of creation:
   # first created -> highest priority.
