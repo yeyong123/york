@@ -4,7 +4,7 @@
 }
 .index-top {
 	height: 20px;
-	border: 1px solid;
+	//border: 1px solid;
 }
 .index-top ul {
 	list-style: none;
@@ -21,7 +21,7 @@
 // Logo 的位置
 .index-logo {
 	height: 100px;
-	border: 1px solid;
+	//border: 1px solid;
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(30%, #dcd9c7), color-stop(10%, #f6f6f1));
 	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#9f7925', StartColorStr='#aa8430');
 }
@@ -52,7 +52,7 @@
 //导航栏
 .index-nav {
 	height: 40px;
-	border: 1px solid;
+	border: 1px solid #ffffff;
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #00452a), color-stop(10%, #005b37));
 	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#00452a', StartColorStr='#005b37');
 
@@ -68,6 +68,7 @@
 }
 .index-nav li button {
 	background: none;
+	color: white;
 	border-style: none;
 	margin-top: -12px;
 }
@@ -80,7 +81,9 @@
 }
 //热门搜索
 .search-font {
-	border: 1px solid;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #e8e8e8), color-stop(10%, #ededed));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#e8e8e8', StartColorStr='#ededed');
+	border: 1px solid #ffffff;
 	height: 22px;
 	padding: 0;
 }
@@ -98,10 +101,11 @@
 	float: left;
 	margin-bottom: 10px;
 }
-.nav-list h3 {
+.nav-list h4 {
 	color: white;
 	margin: 0;
-	padding-left: 15px;
+	height: 25px;
+	padding: 5px 0 0 15px;
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(30%, #9f7925), color-stop(10%, #aa8430));
 	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#9f7925', StartColorStr='#aa8430');
 }
@@ -138,7 +142,7 @@
 	clear: both;
 	width: 980px;
 	float: left;
-	border: 1px solid;
+	border: 1px solid #ffffff;
 }
 .show-product ul {
 	list-style: none;
@@ -157,7 +161,7 @@
 .footer-nav {
 	margin-top: 10px;
 	height: 200px;
-	border: 1px solid;
+	border: 1px solid #ffffff;
 	clear: both;
 }
 //关于我们
@@ -165,7 +169,7 @@
 	width: 300px;
 	float: left;
 	height: 200px;
-	border: 1px solid;
+	border-bottom: 1px solid;
 }
 .new-robt {
 	margin-left: 38px;
@@ -190,7 +194,9 @@
 	margin: 0;
 	padding-left: 20px;
 	list-style: none;
-	background: #770;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(30%, #b2b2b2), color-stop(10%, #eaeaea));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#b2b2b2', StartColorStr='#eaeaea');
+
 }
 //新闻中心
 .mulu img {
@@ -200,8 +206,10 @@
 //页脚导航
 .footer-list {
 	margin-top: 10px;
-	border: 1px solid;
-	background: #e8e8e8;
+	border: 1px solid #ffffff;
+		background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(2%, #b2b2b2), color-stop(8%, #eaeaea));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#b2b2b2', StartColorStr='#eaeaea');
+
 	height: 200px;
 }
 .list-nav {
@@ -222,6 +230,7 @@
 }
 .list-nav:first-child {
 	margin: 0;
+	margin-left: 5px;
 }
 .list-nav:last-child {
 	float: right;
@@ -230,7 +239,7 @@
 //本公司的优势
 .footer-youshi {
 	margin-top: 5px;
-	border: 1px solid;
+	border: 1px solid #ffffff;
 	height: 50px;
 }
 .youshi img {
@@ -253,8 +262,10 @@
 //底部导航
 .nav-footer {
 	margin-top: 10px;
-	border: 1px solid;
+	border-bottom: 3px solid #b2b2b2;
 	height: 25px;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(2%, #b2b2b2), color-stop(40%, #eaeaea));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#b2b2b2', StartColorStr='#eaeaea');
 }
 .nav-footer ul {
 	list-style: none;
@@ -262,6 +273,7 @@
 }
 .nav-footer li {
 	float: left;
+	color: rgb(253,88,14);
 	padding: 3px;
 	margin-left: 10px;
 }
@@ -301,7 +313,8 @@ a{
 }
 .tabs{
 	height: 20px;
-	background: yellow;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(30%, #b2b2b2), color-stop(10%, #eaeaea));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#b2b2b2', StartColorStr='#eaeaea');
 	border-bottom:1px solid #999;
 	border-left: 1px solid #999;
 	width: 100%;
@@ -318,11 +331,13 @@ a{
 	position: relative;
 }
 .tabs ol {
-	background: red;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(30%, #00452a), color-stop(10%, #016e43));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#00452a', StartColorStr='#016e43');
 	width: 120px;
+	color: white;
 	float: left;
 	height: 20px;
-	font-size: 12pt;
+	font-size: 10pt;
 	padding-left: 15px;
 	margin: 0;
 }
@@ -343,9 +358,8 @@ a{
 	background: none;
 }	
 .tabs .thistab,.tabs .thistab a:hover{
-	background: #fff;
+	background: none;
 	height: 18px;
-	border-bottom: 1px solid #fff;
 }
 #tab_conbox {
 	margin-top: 5px;
