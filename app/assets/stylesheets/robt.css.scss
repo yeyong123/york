@@ -2,10 +2,52 @@
 .affix {
 	position: fixed;
 	top: 0px;
-	width: 1351px;
+	width: 100%;
 	//left: 13.8%;
 	z-index: 2;
 }
+//大类展示页面的附加导航
+#location .affix {
+	position: fixed;
+	top: 40px;
+}
+#location .nav-list {
+	width: 165px;
+	height: auto;
+	margin-right: 0;
+	background: #eaeaea;
+}
+#location .nav-list li:first-child {
+	background-image: -moz-linear-gradient(top, #aa8430 10%, #9f7925 30%);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(30%, #9f7925), color-stop(10%, #aa8430));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#9f7925', StartColorStr='#aa8430');
+	color: white;
+	margin: 0;
+	padding: 5px 0 3px 15px;
+	font-size: 12pt;
+	font-weight: bold;
+}
+#location .nav-list li a{
+	float: left;
+	padding: 0;
+	margin: 0;
+	margin-left: 15px;
+	width: 130px;
+}
+#location .nav-list ul li {
+}
+.mylocation {
+	width: 810px;
+	float: right;
+}
+.mylocation .thumbnails li{
+	margin: 2px 5px 5px 0;
+}
+.mylocation .thumbnail {
+	width: 185px;
+}
+////
+//主页面
 .container {
 	width: 980px;
 }
@@ -157,6 +199,7 @@
 }
 .nav-list ul {
 	list-style: none;
+	margin: 0;
 }
 .nav-list li {
 	margin-top: 8px;
@@ -167,7 +210,7 @@
 .nav-list li ul {
 	display: block;
 	position: absolute;
-	left: 83%;
+	left: 100%;
 	top: 0;
 	z-index: 5;
 }
@@ -188,6 +231,16 @@
 	overflow: hide;
 	margin-left: 10px;
 	margin-top: 10px;
+}
+.nav-list ul li i {
+	float: right;
+}
+.nav-list ul li a {
+	margin-left: 15px;
+	font-size: 12pt;
+}
+.nav-list ul li ul li a{
+	font-size: 9pt;
 }
 //首页展示图
 .index-img {
@@ -479,11 +532,12 @@ a{
 	height: 30px;
 }
 .form-search input {
-	margin-top: -3px;
+	margin-top: -5px;
 	width: 300px;
 }
 .form-search button {
-	background: none;
+	//background: none;
+	margin-top: -2px;
 	border-style: none;
 	color: white;
 }

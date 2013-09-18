@@ -1,9 +1,10 @@
-<div class="nav-list">
+
+<div class="nav-list nav">
 	<h4>产品目录</h4>
 	<ul>
 		<% Category.all.each do |cate| %>
-			<li><%= link_to cate.name, category_path(cate.id) %>
-			<ul>
+			<li>	<%= link_to cate.name, category_path(cate.id) %>
+					<ul>
 				<% cate.tags.each do |tag| %>
 					<li>
 					<%= link_to tag.name, tags_path(t:tag) %><br />
@@ -13,6 +14,8 @@
 		<% end %>
 		</li>
 	</ul>
+	<i class="icon-chevron-right"></i>
+
 	</li>
 		<% end %>
 	</ul>

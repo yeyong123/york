@@ -1,24 +1,27 @@
-	<table class="table">
-		<tr>
-			<th>catename</th>
-			<th>tagname</th>
-			<th>listname</th>
-		</tr>
-		<tr>
-
-<% @categories.each do |cate| %>
-			<td><%= cate.name %></td>
+<div id="location">
+	<ul class="nav nav-list affix" data-spy="affix" data-offset-top="150">
+		<li>产品目录</li>
+		<% @categories.each do |cate| %>
 			<% cate.tags.each do |tag| %>
-				<td><%= tag.name %></td>
-				<% tag.lists.each do |list| %>
-					<td><%= list.name %> </td>
-				<% end %>
+				<li><%= link_to tag.name, tags_path(t:tag) %>
+				<i class="icon-chevron-right"></i></li>
+			<%end %>
 		<% end %>
-		<td><%= link_to "show", cate %></td>
-		<td><%= link_to "edit", edit_category_path(cate) %></td>
-		</tr>
-
-<% end %>
-	</table>
-
-
+	</ul>
+</div>
+<div class="mylocation">
+<div class="row-fluid">
+	<ul class="thumbnails">
+		<% @categories.each do |cate| %>
+			<% cate.tags.each do |tag| %>
+				<% tag.lists.each do |list| %>
+					<% list.products.each do |product| %>
+						<%= render partial: "products/like_view", locals: {product: product} %>
+					<%end %>
+				<% end %>
+			<% end %>
+		<% end %>
+	</ul>
+</div>
+<%= will_paginate @category %>
+</div>

@@ -3,9 +3,9 @@ class ProductsController < ApplicationController
 	before_filter :authenticate_user!, only: [:like]
 	def index
 		unless params[:t]
-			@products = Product.order("id desc").paginate(page: params[:page], per_page: 12)
+			@products = Product.order("updated_at desc").paginate(page: params[:page], per_page: 4)
 		else
-			@products = Product.where("list_id = ? ", params[:t]).order("id desc").paginate(page: params[:page], per_page: 12)
+			@products = Product.where("list_id = ? ", params[:t]).order("liked_count desc").paginate(page: params[:page], per_page: 4)
 		end
 			@products.each do |product|
 				product.photos.build

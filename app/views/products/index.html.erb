@@ -1,5 +1,21 @@
 #encoding:utf-8
 <% provide(:title, t('.product')) %>
+	<% if product? %>
+	<div class="alert alert-error"><strong style="text-align: center">什么也没有</strong></div>
+<% else %>
+<div id="location">
+	<ul class="nav nav-list affix" data-spy="affix", data-offset-top="150">
+		<li>产品目录</li>
+		<% @products.each do |product| %>
+				<li><%= link_to product.list.name, products_path(t:product)%>
+			<i class="icon-chevron-right"></i>
+			</li>
+		<% end %>
+	</ul>
+</div>
+<div class="mylocation">
 <%= render partial: 'products/list', locals: {products: @products} %>
 <%= will_paginate @products %>
 <%= link_to t('.new_product'), new_product_path %>
+</div>
+<% end %>
