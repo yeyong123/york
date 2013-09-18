@@ -1,31 +1,11 @@
 <!-- 调试 -->
-<div class="search-font">
-	<small>热门搜索：高空作业车 电动堆高车  电动搬运车 小推车</small>
-</div>
-<div class="nav-list">
-	<h4>产品目录</h4>
-	<ul>
-		<% Category.all.each do |cate| %>
-			<li><%= cate.name %>
-			<ul>
-				<% cate.tags.each do |tag| %>
-					<li>
-					<%= link_to tag.name, tags_path(t:tag) %><br />
-					<% tag.lists.each do |list| %>
-						<%= link_to list.name, products_path(t:list) %>
-					<% end %>
-		<% end %>
-		</li>
-	</ul>
-	</li>
-		<% end %>
-	</ul>
-</div>
+<%= render partial: "products/nav_list" %>
 <div class="index-img">
 	<%= render 'image' %>
 		<div id="pic" style="width:745px;height:297px;margin:auto">	
 	</div>
 </div>
+<%= render 'like_view' %>
 <%= render 'index_products' %>
 <div class="footer-nav">
 	<div class="about-us">

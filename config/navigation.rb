@@ -49,12 +49,28 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            when the item should be highlighted, you can set a regexp which is matched
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
-    primary.item :home, 'Home',root_path, :highlights_on => /(^\/$|^\/home)/ do |home|
-			home.item :products, t("activerecord.models.product"),products_path do |pro|
-			Product.all.each do |product|
-				pro.item :product, product.title, product_path(product.id)
+		primary.item :home, 'Home',root_path, :highlights_on => /(^\/$|^\/home)/ do |home|
+			home.item :products, t("activerecord.models.product"),products_path do |pro| 
+				Category.all.each do |cate| 
+					pro.item :cate, cate.name, category_path(cate.id) do |category|
+						cate.tags.each do |tag|
+							category.item :tag, tag.name, tags_path(t:tag) do |tags|
+								tag.lists.each do |list|
+									tags.item :list, list.name, products_path(t:list) do |lists|
+										list.products.each do |product|
+											lists.item :product, product.title, product_path(product.id)
+										end
+									end
+								end
+							end
+						end
+					end
+				end
 			end
-		end
+			home.item :users, 'usersignin', new_session_path(:user)
+			home.item :users, 'signup', new_registration_path(:user)
+			home.item :admins, 'signin', new_session_path(:admin)
+			home.item :carts, 'cart', cart_path
 
     # Add an item which has a sub navigation (same params, but with block)
     #primary.item :key_2, 'name', url, options do |sub_nav|

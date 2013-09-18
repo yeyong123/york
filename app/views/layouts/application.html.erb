@@ -7,76 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="set_locale navbar-fixed-top">
+<div class="index-top">
+	<ul>
+		<% if current_user %>
+			<li> <%= link_to current_user.name, product_users_path, style: "color: black; font-weight: bold"%> &nbsp</li>
+			<li><%= link_to t('.signout'), destroy_user_session_path, method: :delete, class: "btn btn-mini btn-danger" %></li>
+		<% else %>
+		<li><%= link_to t('.signin'), new_session_path(:user), class: "btn btn-mini btn-primary"%>&nbsp</li>
+		<li><%= link_to t('.signup'), new_registration_path(:user), class: "btn btn-mini btn-success" %></li>
+	<% end %>
+		<li><div class="set_locale">
 	<%= form_tag root_path, class: 'locale' do %>
 		<%= select_tag 'set_locale', options_for_select(LANGUAGES, I18n.locale.to_s),
 			onchange: 'this.form.submit()' %>
 			<%= javascript_tag "$$('.locale input').each(Element.hide)" %>
 		<% end %>
 	</div>
-<div class="index-show">
-	<p>banar</p>
-</div>
-<div class="navbar">
-	<div class="navbar-inner">
-		<div class="container">
-<ul class="nav">
-	<li><%= link_to t('.home'), root_path, iclass: "icon-home" %></li>
-	<li><%= link_to t('.product'), products_path %></li>
-	<li><%= link_to t('.about'), "#" %></li>
-	<li><%= link_to t('.contact'), "#" %></li>
-	<% if user_signed_in? %>
-		<li class="dropdown">
-		<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user"></i><%= current_user.name %><b class="caret"></b></a> 
-		<ul class="dropdown-menu">
-			<li><%= link_to "修改密码", edit_registration_path(:user) %></li>
-			<li><%= link_to "个人中心", product_users_path %></li>
-			<li class="divider"></li>
-			<li><%= link_to "注销", destroy_user_session_path, :method => :delete %></li>
-		</ul>
-		</li>
-		<% else %>
-		<li><%= link_to t('.sign_in'), new_session_path(:user) %></li> 
-		<li><%= link_to t('.sign_up'), new_registration_path(:user) %></li>
-
-	<% end %>
-	</ul>
-	<form action="/search" method="get" class="navbar-search pull-left form-search">
-			<i class="icon-search"></i>
-<input type="text" name="q" value="" class="serach-query" placeholder="search">
-		<button type="submit" class="btn no-btn btn-info"><%= t('.search') %></button>
-	</form>
-	<div class="nav-ccc">
-		<nav class="nav-ddd">
-		<ul>
-		<li class="nav-index">
-			<span class="badge badge-important">
-				<%= @cart.total_items %>
-			</span>
-				<i class="icon-shopping-cart"></i>
-				<%= link_to "购物车", cart_path  %>
-				<ul>
-					<li>
-					</li>
-								</ul>
-				</li>
-			</ul>
-			</nav>
-		</div>
-</div>
-</div>
-
-</div>
-
-<p class="alert"><%= alert %><%= notice %></p>
-		<ul class="breadcrumb">
-			<%= render_navigation(:renderer => :breadcrumbs, :join_with => '&nbsp / &nbsp') %>
-		</ul>
-<div class="index-top">
-	<ul>
-		<li><%= link_to "登录", new_session_path(:user) %>|</li>
-		<li><%= link_to "注册", new_registration_path(:user) %></li>
-		<li>English</li>
+</li>
 	</ul>
 </div>
 <div class="index-logo">
@@ -101,20 +48,28 @@
 </div>
 </div>
 </div>
-<div class="index-nav">
+<div class="index-nav affix" data-spy="affix" data-offset-top="150">
 	<div class="center-index">
-	<ul>
-		<li><%= link_to "首页", root_path %></li>
-		<li><%= link_to "产品中心", products_path	%> </li>
-		<li><%= link_to "关于我们", "#" %></li>
-		<li><%= link_to "服务中心", "#" %>	 </li>
-		<li><%= link_to "新闻", "#" %></li>
-		<li><%= link_to "联系我们", "#" %>  </li>
+	<ul class="drop-down">
+		<li><%= link_to t('.home'), root_path %></li>
+		<li><%= link_to t('.product'), products_path	%> 
+			<ul>
+	<% Category.all.each do |cate| %>
+
+			<li><%= link_to cate.name, category_path(cate.id) %></li>
+	<% end %>
+
+		</ul>
+		</li>
+		<li><%= link_to t('.about'), "#" %></li>
+		<li><%= link_to t('.server'), "#" %>	 </li>
+		<li><%= link_to t('.new'), "#" %></li>
+		<li><%= link_to t('.contact'), "#" %>  </li>
 		<li class="form-search">	
 <form action="/search" method="get">
 			<i class="icon-search icon-white"></i>
 <input type="text" name="q" value="" class="serach-query" placeholder="请输入产品名称或货号">
-		<button type="submit">搜索</button>
+<button type="submit"><%= t('.search') %></button>
 	</form>
 
 			</li>
@@ -127,11 +82,20 @@
 	</ul>
 </div>
 </div>
+<div class="search-font">
+	<span class="alert"><%= alert %><%= notice %></span>
+	<small><%= t('.hot') %>：<%= link_to "高空作业车", categories_path %> <%= link_to "电动堆高车", tags_path(t: "电动堆高车") %>  <%= link_to "电动搬运车", tags_path(t: "电动搬运车") %> <%= link_to "小推车", tags_path(t: "小推车") %></small>
+</div>
+
+		<ul class="breadcrumb">
+			<span><%= t('.current_location') %>：</span>
+			<%= render_navigation(:renderer => :breadcrumbs, :join_with => '&nbsp / &nbsp') %>
+		</ul>
 
 		<div class="container">
 			<%= yield %>
 		</div>
-<div class="footer-list">
+<div class="footer-list" id="footer-list">
 	<div class="center-index">
 	<div class="list-nav">
 		<h3>市场策略</h3>
@@ -234,38 +198,29 @@
 <div class="nav-footer">
 	<div class="center-index">
 	<ul>
-		<li>联系我们 </li>
-		<li>产品中心 </li>
-		<li>新闻中心  </li>
-		<li>销售条款  </li>
-		<li>网站地图  </li>
-		<li>帮助中心  </li>
+		<li><%= link_to t('.contact'), "#" %> </li>
+		<li><%= link_to t('.product'), products_path %> </li>
+		<li><%= link_to t('.new'), "#" %>  </li>
+		<li><%= link_to t('.sale'), "#" %>  </li>
+		<li><%= link_to t('.web'), "#" %>  </li>
+		<li><%= link_to t('.help'), "#" %>  </li>
 	</ul>
 </div>
 </div>
 <div class="category-list">
 	<div class="center-index">
-	<span>推荐词条：</span>
+		<span><%= t('.recommended') %>：</span>
 	<br />
 	<% Category.all.each do |cate|%>
-		<span><%= cate.name %> | </span>
+		<span><%= link_to cate.name, category_path(cate.id) %> | </span>
 		<% cate.tags.each do |tag| %>
-			<span><%= tag.name %> |</span>
+			<span><%= link_to tag.name, tags_path(t:tag) %> |</span>
 			<% tag.lists.each do |list| %>
-				<span>	<%= list.name %></span>
+				<span>	<%= link_to list.name, products_path(t:list) %></span>
 			<% end %>
 		<% end %>
 	<% end %>
-	<% Category.all.each do |cate|%>
-		<span><%= cate.name %> | </span>
-		<% cate.tags.each do |tag| %>
-			<span><%= tag.name %> |</span>
-			<% tag.lists.each do |list| %>
-				<span>	<%= list.name %></span>
-			<% end %>
-		<% end %>
-	<% end %>
-</div>
+	</div>
 	</div>
 <div class="footer-bottom">
 	<span>版权所有：上海罗倍拓工业设备有限公司 高空作业平台 适用于中国客户的内容设计</span><br />
@@ -290,4 +245,8 @@
 		</div>
 		</footer>
 		</body>
+	<div class="returnTop" title="返回顶部">
+		<span class="s"></span>
+		<span class="b"></span>
+	</div>
 </html>

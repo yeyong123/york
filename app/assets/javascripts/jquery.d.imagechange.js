@@ -94,7 +94,7 @@ jQuery.fn.extend({
 						.css('opacity',config.bgOpacity)
 						.css('position','absolute')
 						.css('marginTop',_h-config.bgHeight)
-						.css('zIndex',3333);
+						.css('zIndex',1);
 			}
 			
 			// 文字区
@@ -104,7 +104,7 @@ jQuery.fn.extend({
 						.height(config.bgHeight)
 						.css('position','absolute')
 						.css('marginTop',_h-config.bgHeight)
-						.css('zIndex',6666);
+						.css('zIndex',1);
 			// 按钮区
 			var _btnArea = 
 			$('<div />').appendTo(_this)
@@ -113,7 +113,7 @@ jQuery.fn.extend({
 						.css('position','absolute')
 						.css('marginTop',_h-config.bgHeight)
 						.css('marginLeft',_w-(config.btnWidth+config.btnMargin)*_n)
-						.css('zIndex',9999)
+						.css('zIndex',1)
 						.css('display',config.btn?'block':'none');
 			
 			// 插入空div修正IE的绝对定位BUG

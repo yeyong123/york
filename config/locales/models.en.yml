@@ -1,0 +1,32 @@
+en:
+  activerecord:
+    models:
+      product: "Products"
+      admin: "Admins"
+      user: "Users"
+      category: "Categories"
+      tag: "Tags"
+      list: "Lists"
+      cart: "Carts"
+      line_item: "Line Items"
+      order: "Order"
+      product_user: "Product User"
+    attributes:
+      product:
+        product: "Products"
+        title: "Title"
+        number: "Number"
+        use: "Use"
+        load: "Load"
+        content: "Content"
+      admin: 
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+      user:
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+        name: "User Name"
+        remember_me: "Remember Me"
+          

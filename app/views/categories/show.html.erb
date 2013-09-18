@@ -3,49 +3,7 @@
 		<% @category.tags.each do |tag| %>
 			<% tag.lists.each do |list| %>
 				<% list.products.each do |product| %>
-					<li>
-					<div class="thumbnail">
-						<%= link_to image_tag(product.photos.first.image_url),product %>
-						<div class="caption">
-							<h5><%= product.title %></h5>
-							<small><%= product.number %></small>
-							<small><%= product.use %></small>
-							<p><%= truncate(product.content, length: 34) %></p>
-							<p>
-
-							<% if current_user.try(:likes?, product) %>
-								<%= unlike_link_for(product) %>
-								<i class="icon-thumbs-down"></i>
-								<font style="color: red">
-									<%= product.like_count %></font>
-								<%= t('.like') %>
-							<% else %>
-								<% if current_user.present? %>
-									<%= like_link_for product %>
-									<i class="icon-thumbs-up"></i>
-									<font style="color: red">
-										<%= product.like_count %></font>
-									<%= t('.like') %>
-								<% else %>
-									<font style="color:red">
-										<%= product.like_count %>
-									</font><%= t('.like') %>
-								<% end %>
-							<% end %>
-							/ <font style="color: red"><%= product.view_count %></font>
-							<%= t('.visit') %>
-							</p>
-							<p>
-							<%= link_to t('.show'), product, class: "btn btn-primary" %>
-							<% if admin_signed_in? %>
-								<%= link_to "Delete", product, method: :delete, confirm: "sure?", class: "btn btn-danger" %>
-							<% else %>
-								<%= button_to t('.cart'), line_items_path(product_id: product), class: "btn" %>
-							<% end %>
-							</p>
-						</div>
-					</div>
-					</li>
+					<%= render partial: "products/like_view", locals: {product: product} %>
 				<% end %>
 			<% end %>
 		<% end %>

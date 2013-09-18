@@ -1,9 +1,17 @@
 //最顶上的登录注册栏
+.affix {
+	position: fixed;
+	top: 0px;
+	width: 1351px;
+	//left: 13.8%;
+	z-index: 2;
+}
 .container {
 	width: 980px;
 }
 .index-top {
-	height: 20px;
+	height: 30px;
+	background: white;
 	//border: 1px solid;
 }
 .index-top ul {
@@ -14,16 +22,22 @@
 }
 .index-top li {
 	float: left;
+	margin-top: 3px;
 	margin-right: 5px;
 }
 .index-top li:last-child {
 	float: right;
 	margin-right: 10px;
+	margin-top: -20px;
+}
+.set-locale {
+	margin-top: -20px;
 }
 // Logo 的位置
 .index-logo {
 	height: 100px;
 	//border: 1px solid;
+	background-image: -moz-linear-gradient(top, #f6f6f1 10%, #dcd9c7 30%);
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(30%, #dcd9c7), color-stop(10%, #f6f6f1));
 	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#9f7925', StartColorStr='#aa8430');
 }
@@ -59,6 +73,7 @@
 .index-nav {
 	height: 40px;
 	border: 1px solid #ffffff;
+	background-image: -moz-linear-gradient(top, #005b37 10%, #00452a 30%);
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #00452a), color-stop(10%, #005b37));
 	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#00452a', StartColorStr='#005b37');
 
@@ -76,10 +91,12 @@
 	color: white;
 }
 .index-nav li:last-child{
-	float: right;
 }
 //热门搜索
 .search-font {
+	width: 980px;
+	margin: auto;
+	background-image: -moz-linear-gradient(top, #ededed 10%, #e8e8e8 30%);
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #e8e8e8), color-stop(10%, #ededed));
 	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#e8e8e8', StartColorStr='#ededed');
 	border: 1px solid #ffffff;
@@ -88,7 +105,35 @@
 }
 .search-font small {
 	float: left;
-	margin-left: 480px;
+	margin-left: 130px;
+}
+.search-font span {
+	float: left;
+	border: 1px solid #ffffff;
+}
+.search-font small a {
+	font-size: 10pt;
+	margin-left: 6px;
+}
+.search-font .alert {
+	height: 20px;
+	width: 300px;
+	padding: 0;
+	margin: 0;
+}
+.breadcrumb {
+	height: 22px;
+	padding: 0;
+	border: 1px solid #ffffff;
+	width: 980px;
+	margin: auto;
+	background: #eaeaea;
+}
+.breadcrumb span {
+	float: left;
+}
+.breadcrumb a {
+	color: blue;
 }
 //分类导航的位置
 
@@ -106,6 +151,7 @@
 	margin: 0;
 	height: 25px;
 	padding: 5px 0 0 15px;
+	background-image: -moz-linear-gradient(top, #aa8430 10%, #9f7925 30%);
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(30%, #9f7925), color-stop(10%, #aa8430));
 	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#9f7925', StartColorStr='#aa8430');
 }
@@ -170,19 +216,7 @@
 	float: left;
 	border: 1px solid #ffffff;
 }
-.show-product ul {
-	list-style: none;
-	margin: 0;
-	margin-left: 3px;
-}
-.show-product img {
-	width: 180px;
-	margin-right: 2px;
-	height: 120px;
-}
-.index-products,.show-product {
-	margin-bottom: 5px;
-}
+
 //公司介绍，新闻中心
 .footer-nav {
 	margin-top: 10px;
@@ -220,6 +254,7 @@
 	margin: 0;
 	padding-left: 20px;
 	list-style: none;
+	background-image: -moz-linear-gradient(top, #eaeaea 10%, #b2b2b2 30%);
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(30%, #b2b2b2), color-stop(10%, #eaeaea));
 	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#b2b2b2', StartColorStr='#eaeaea');
 
@@ -233,7 +268,8 @@
 .footer-list {
 	margin-top: 10px;
 	border: 1px solid #ffffff;
-		background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(2%, #b2b2b2), color-stop(8%, #eaeaea));
+	background-image: -moz-linear-gradient(top, #b2b2b2 2%, #eaeaea 8%);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(2%, #b2b2b2), color-stop(8%, #eaeaea));
 	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#b2b2b2', StartColorStr='#eaeaea');
 
 	height: 220px;
@@ -291,6 +327,7 @@
 	margin-top: 10px;
 	border-bottom: 3px solid #b2b2b2;
 	height: 25px;
+	background-image: -moz-linear-gradient(top, #b2b2b2 2%, #eaeaea 40%);
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(2%, #b2b2b2), color-stop(40%, #eaeaea));
 	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#b2b2b2', StartColorStr='#eaeaea');
 }
@@ -300,22 +337,46 @@
 }
 .nav-footer li {
 	float: left;
-	color: rgb(253,88,14);
 	padding: 3px;
 	margin-left: 10px;
 }
+.nav-footer li a{
+color: rgb(253,88,14);
+}
 //推荐词条
 .category-list {
-	color: rgb(253,88,14);
 	border-bottom: 3px solid #b2b2b2;
 	margin-top: 5px;
 	padding-bottom: 5px;
+	color: rgb(253,88,14);
+}
+.category-list a {
+	color: rgb(253,88,14);
 }
 //最地下的公司信息
 .footer-bottom  {
 	color: rgb(253,88,14);
 	margin-top: 5px;
 	text-align: center;
+}
+
+//喜欢浏览
+.like_view ol {
+	height: 25px;
+	border: 1px solid;
+	background-image: -moz-linear-gradient(top, #016e43 10%, #00452a 30%);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(30%, #00452a), color-stop(10%, #016e43));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#00452a', StartColorStr='#016e43');
+
+}
+.like_view, .like_view ol{
+	margin: 0;
+}
+.like_view span {
+	padding: 10px;
+	font-style: bold;
+	color: white;
+	margin-left: 10px;
 }
 //滑动门
 .show-product li{
@@ -339,7 +400,11 @@ a{
 }
 #tab_conbox ol {
 	float: left;
-	margin: 3px 5px 3px 2px;
+	margin: 4px 5px 3px 2px;
+}
+#tabs ol a {
+	color: white;
+	margin-top: 10px;
 }
 #tab_conbox .thumbnail {
 	width: 180px;
@@ -348,7 +413,8 @@ a{
 	display:none;
 }
 .tabs{
-	height: 20px;
+	height: 25px;
+	background-image: -moz-linear-gradient(top, #eaeaea 10%, #b2b2b2 30%);
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(30%, #b2b2b2), color-stop(10%, #eaeaea));
 	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#b2b2b2', StartColorStr='#eaeaea');
 	border-bottom:1px solid #999;
@@ -356,10 +422,11 @@ a{
 	width: 100%;
 }
 .tabs li{
-	height:20px;
-	line-height:20px;
+	height:25px;
+	line-height:25px;
 	float:left;
 	margin-left: 10px;
+	margin-top: 2px;
 	border-left:none;
 	margin-bottom: -1px;
 	background: none;
@@ -367,14 +434,18 @@ a{
 	position: relative;
 }
 .tabs ol {
+	background-image: -moz-linear-gradient(top, #016e43 10%, #00452a 30%);
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(30%, #00452a), color-stop(10%, #016e43));
 	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#00452a', StartColorStr='#016e43');
 	width: 120px;
 	color: white;
 	float: left;
-	height: 20px;
+	height: 25px;
 	font-size: 10pt;
 	padding-left: 15px;
+	margin: 0;
+}
+#tab_conbox, #tabs  {
 	margin: 0;
 }
 #media {
@@ -382,6 +453,7 @@ a{
 	background: none;
 	position: relative;
 	margin-right: 10px;
+	margin-top: -26px;
 }
 #media a {
 	position: relative;
@@ -404,10 +476,10 @@ a{
 }
 //搜索表单
 .form-search {
-	margin-top: -3px;
 	height: 30px;
 }
 .form-search input {
+	margin-top: -3px;
 	width: 300px;
 }
 .form-search button {

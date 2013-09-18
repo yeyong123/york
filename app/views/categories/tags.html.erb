@@ -1,6 +1,9 @@
+<div class="row-fluid">
+	<ul class="thumbnails">
 <% @lists.each do |list| %>
 	<% list.products.each do |product| %>
-		<%= product.title %>
-		<%= image_tag(product.photos.first.image_url) %>
+		<%= render partial: "products/like_view", locals: {product: product} %>
 	<% end %>
 <% end %>
+</ul>
+</div>

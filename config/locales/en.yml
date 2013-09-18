@@ -13,7 +13,18 @@ en:
       home: "Home"
       product: "Products"
       about: "About"
+      new: "New"
       contact: "Contact"
+      server: "Server"
+      sale: "Terms of Sale"
+      help: "Help Center"
+      web: "Site Map"
+      hot: "Hot Search"
+      recommended: "Recommended Entry"
+      current_location: "Current Location"
+      signin: "Sign In"
+      signout: "Sign Out"
+      signup: "Sign Up"
   products:
     index: 
       product: "Products"
@@ -28,3 +39,13 @@ en:
       submit: "Submit"
     list:
       cart: "Add Cart"
+    like_view:
+      cart: "Add Cart"
+      show: "Show"
+      like: "Like"
+      visit: "Visit"
+  home:
+    index_products:
+      cart: "Add Cart"
+      show: "Show"
+

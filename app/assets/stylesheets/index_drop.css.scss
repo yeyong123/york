@@ -1,0 +1,35 @@
+.drop-down ul {
+	list-style: none;
+}
+.drop-down li {
+	margin-top: 0;
+	position: relative;
+}
+.drop-down li ul {
+	display: block;
+	position: absolute;
+	left: -80%;
+	top: 60%;
+	z-index: 2;
+}
+.drop-down li ul {
+	display: none;
+	}
+.drop-down li ul {
+	width: 120px;
+	background: #e8e8e8;
+	border: 1px solid;
+	border-radius: 4px;
+}
+.drop-down li:hover > ul {
+	display: block;
+}
+.drop-down li ul li {
+	border-style: none;
+	border-bottom: 1px solid;
+	margin: 5px;
+}
+.drop-down li ul li a {
+	color: black;
+}
+

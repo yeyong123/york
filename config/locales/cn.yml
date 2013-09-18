@@ -5,6 +5,18 @@
       product: "产品中心"
       about: "关于我们"
       contact: "联系我们"
+      new: "新闻"
+      server: "服务中心"
+      search: "搜索"
+      sale: "销售条款"
+      help: "帮助中心"
+      web: "网站地图"
+      hot: "热门搜索"
+      recommended: "推荐词条"
+      current_location: "当前位置"
+      signin: "登录"
+      signup: "注册"
+      signout: "退出"
   products:
     index:
       product: "产品中心"
@@ -23,3 +35,14 @@
       cart: "加入购物车"
       like: "喜欢"
       visit: "浏览"
+    like_view:
+      cart: "加入购物车"
+      show: "查看"
+      like: "喜欢"
+      visit: "浏览"
+  home:
+    index_products:
+      cart: "加入购物车"
+      show: "查看"
+      visit: "浏览"
+      like: "喜欢"

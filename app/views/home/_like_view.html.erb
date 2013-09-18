@@ -1,0 +1,25 @@
+<div class="show-product">
+	<ul class="like_view">
+		<ol><span>关注最多</span></ol>
+	</ul>
+	<div class="row-fluid">
+		<ul class="thumbnails">
+			<% Product.order("liked_count desc").limit(4).each do |product| %>
+		<%= render partial: 'products/like_view', locals: {product: product} %>
+	<% end %>
+</div>
+</ul>
+</div>
+<div class="show-product">
+	<ul class="like_view">
+		<ol><span>访问最多</span></ol>
+	</ul>
+	<div class="row-fluid">
+		<ul class="thumbnails">
+			<% Product.order("view_count desc").limit(4).each do |product| %>
+
+				<%= render partial: 'products/like_view', locals: {product: product} %>
+			<% end %>
+		</ul>
+	</div>
+</div>

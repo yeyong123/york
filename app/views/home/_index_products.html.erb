@@ -6,39 +6,36 @@
 				<% cate.tags.each do |tag| %>
 					<li><%= link_to tag.name, "#" %></li>
 				<% end %>
-				<% cate.tags.each do |tag| %>
-					<li id="media"><%= link_to "产", tags_path(t:tag) %></li>
-				<% end %>
 			</ul>
 			<ul class="tab_conbox" id="tab_conbox">
 				<% cate.tags.each do |tag| %>
-									<li class="tab_con">
+					<li class="tab_con">
 					<div class="row-fluid">
 						<ul class="thumbnails">
-					<% tag.lists.each do |list| %>
-						<% list.products.each do |product| %>
-							<ol>
-							<div class="thumbnail">
-							<%= image_tag(product.photos.first.image_url) %>
-							<div class="caption">
-	<h5><%= product.title %></h5>
-							<small><%= product.number %></small>
-							<small><%= product.use %></small>
-							<p><%= truncate(product.content, length: 34) %></p>
-							<p>
-
-							<% if current_user.try(:likes?, product) %>
-								<%= unlike_link_for(product) %>
-								<i class="icon-thumbs-down"></i>
-								<font style="color: red">
-									<%= product.like_count %></font>
-								<%= t('.like') %>
-							<% else %>
-								<% if current_user.present? %>
-									<%= like_link_for product %>
-									<i class="icon-thumbs-up"></i>
-									<font style="color: red">
-										<%= product.like_count %></font>
+							<% tag.lists.limit(1).each do |list| %>
+								<div id="media"><%= link_to "查看更多", tags_path(t:tag) %></div>
+								<% list.products.each do |product| %>
+									<ol>
+										<div class="thumbnail">
+											<%= image_tag(product.photos.first.image_url) %>
+											<div class="caption">
+												<h5><%= product.title %></h5>
+												<small><%= product.number %></small>
+												<small><%= product.use %></small>
+												<p><%= truncate(product.content, length: 34) %></p>
+												<p>
+												<% if current_user.try(:likes?, product) %>
+													<%= unlike_link_for(product) %>
+													<i class="icon-thumbs-down"></i>
+													<font style="color: red">
+														<%= product.like_count %></font>
+													<%= t('.like') %>
+												<% else %>
+													<% if current_user.present? %>
+														<%= like_link_for product %>
+														<i class="icon-thumbs-up"></i>
+														<font style="color: red">
+															<%= product.like_count %></font>
 									<%= t('.like') %>
 								<% else %>
 									<font style="color:red">
