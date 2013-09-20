@@ -78,6 +78,9 @@
 			<%= link_to @cart.total_items, cart_path %>
 		</span>
 		<i class="icon-shopping-cart icon-white"></i>
+		<ul>
+			<li><%= render partial: 'carts/list', locals: {carts: @cart} %></li>
+		</ul>
 			</li>
 	</ul>
 </div>

@@ -1,4 +1,5 @@
 #encoding:utf-8
+<div class="button-cart">
 <div>Cart</div>
 <table class="table">
 		<% @cart.line_items.each do |item| %>
@@ -7,8 +8,8 @@
 			<td><%= item.quantity %></td>
 		</tr>
 	<% end %>
-<div style="float: right; margin-right: 10px">
-	<%= button_to "付款", new_order_path, method: :get %>
+	<div class="button-cart">
+	<%= link_to "付款", new_order_path, method: :get, class: "btn btn-primary"%>
 <%= link_to "empty cart", cart_path(@cart), method: :delete, confirm: "确定删除", class: "btn btn-danger" %> 
 </div>
 </table>

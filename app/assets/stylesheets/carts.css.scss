@@ -5,4 +5,21 @@
 	width: 70px;
 	height: 50px;
 }
+.drop-down li:last-child ul {
+	width: 260px;
+	left: -200%;
+}
+.drop-down li:last-child ul li {
+	color: black;
+}
+.button-cart a{
+	float: right;
+	margin-left: 30px;
+}
+.index-cart {
+	width: 240px;
+}
+.index-cart a:link {
+	color: white;
+}
 

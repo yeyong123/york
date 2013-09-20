@@ -50,6 +50,9 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
 		primary.item :home, 'Home',root_path, :highlights_on => /(^\/$|^\/home)/ do |home|
+			home.item :categories, t("activerecord.models.category"), categories_path do |cate|
+				cate.item :tags, t("activerecord.models.tag"), tags_path
+			end
 			home.item :products, t("activerecord.models.product"),products_path do |pro| 
 				Category.all.each do |cate| 
 					pro.item :cate, cate.name, category_path(cate.id) do |category|
