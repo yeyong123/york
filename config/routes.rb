@@ -4,6 +4,8 @@ York::Application.routes.draw do
   
 
 
+  mount Ckeditor::Engine => '/ckeditor'
+
 	scope '(:locale)' do
 		mount RailsAdmin::Engine => '/members', :as => 'rails_admin'
 		devise_for :admins

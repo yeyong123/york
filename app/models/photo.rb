@@ -10,7 +10,7 @@
 #
 
 class Photo < ActiveRecord::Base
-  attr_accessible :image, :product_id
+  attr_accessible :image, :product_id, :remove_image, :image_cache
 	belongs_to :product
 	mount_uploader :image, ImageUploader
 end

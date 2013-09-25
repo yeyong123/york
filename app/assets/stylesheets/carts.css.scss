@@ -5,9 +5,12 @@
 	width: 70px;
 	height: 50px;
 }
-.drop-down li:last-child ul {
+ .drop-down li:last-child ul {
 	width: 260px;
 	left: -200%;
+}
+.affix .drop-down li:last-child:hover > ul {
+	display: block;
 }
 .drop-down li:last-child ul li {
 	color: black;
@@ -22,4 +25,24 @@
 .index-cart a:link {
 	color: white;
 }
-
+//产品展示页面的缩略图
+.thumbnail ul {
+	list-style: none;
+	display: block;
+	position: absolute;
+	left: 89%;
+	top: 0;
+	z-index: 2;
+}
+.thumbnail ul:last-child {
+	left: 0;
+}
+.thumbnail {
+	position: relative;
+}
+.thumbnail ul {
+	display: none;
+}
+.thumbnail:hover > ul {
+	display: block;
+}

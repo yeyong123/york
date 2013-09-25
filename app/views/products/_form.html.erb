@@ -43,7 +43,8 @@
 	</div>
 	<div class="field">
 		<%= f.label :content %><br />
-		<%= f.text_area :content %>
+		<%= javascript_include_tag "ckeditor/ckeditor.js" %>
+		<%= f.cktext_area("content", width: '100%') %>
 	</div>
 	<div class="form-action">
 		<%= f.submit t('.submit'),class: "btn btn-success" %>  <%= link_to t('.back'), products_path, class: "btn btn-primary" %>

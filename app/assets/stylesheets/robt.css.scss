@@ -11,6 +11,9 @@
 	position: fixed;
 	top: 40px;
 }
+.affix .drop-down li ul {
+	display: none;
+}
 #location .nav-list {
 	width: 165px;
 	height: auto;
