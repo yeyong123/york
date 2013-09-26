@@ -16,7 +16,7 @@ class CustomersController < ApplicationController
 
 	def create
 		@user = current_user
-		@customer = @user.build_customer(:customer)
+		@customer = @user.build_customer(params[:customer])
 		if @customer.save
 			redirect_to @customer
 		else

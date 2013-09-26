@@ -1,0 +1,29 @@
+<div class="user-layout">
+	<%= form_for @directory do |f| %>
+		<% if @directory.errors.any? %>
+			<div id="error_explanation">
+				<h3><%= t('.have') %>
+					<%= @directory.errors.count %>
+					<%= t('.number') %>
+					<%= t('.error') %>
+					<%= t('.prohibited_this_directory_from_being_saved') %></h3>
+				<ul>
+					<% @directory.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+		<%= render partial: "directories/list", locals: {f: f} %>
+	<div class="form-action">
+			<%= f.submit "Submit", class: "btn btn-success" %>
+		</div>
+
+		<% end %>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#directory_city_id').linkSelect();
+		$('#directory_district_id').linkSelect();
+	});
+	</script>

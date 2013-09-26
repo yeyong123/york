@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130924143908) do
+ActiveRecord::Schema.define(:version => 20130926085355) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -59,6 +59,24 @@ ActiveRecord::Schema.define(:version => 20130924143908) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "cities", :force => true do |t|
+    t.string   "name"
+    t.integer  "province_id"
+    t.integer  "level"
+    t.string   "zip_code"
+    t.string   "pinyin"
+    t.string   "pinyin_abbr"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "cities", ["level"], :name => "index_cities_on_level"
+  add_index "cities", ["name"], :name => "index_cities_on_name"
+  add_index "cities", ["pinyin"], :name => "index_cities_on_pinyin"
+  add_index "cities", ["pinyin_abbr"], :name => "index_cities_on_pinyin_abbr"
+  add_index "cities", ["province_id"], :name => "index_cities_on_province_id"
+  add_index "cities", ["zip_code"], :name => "index_cities_on_zip_code"
+
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
     t.string   "data_content_type"
@@ -74,6 +92,44 @@ ActiveRecord::Schema.define(:version => 20130924143908) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
+
+  create_table "customers", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+  end
+
+  create_table "directories", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "address"
+    t.string   "phone"
+    t.string   "telphoneumber"
+    t.string   "hangye"
+    t.integer  "province_id"
+    t.integer  "city_id"
+    t.integer  "district_id"
+    t.string   "company"
+    t.string   "tel"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "zip"
+    t.integer  "customer_id"
+  end
+
+  create_table "districts", :force => true do |t|
+    t.string   "name"
+    t.integer  "city_id"
+    t.string   "pinyin"
+    t.string   "pinyin_abbr"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "districts", ["city_id"], :name => "index_districts_on_city_id"
+  add_index "districts", ["name"], :name => "index_districts_on_name"
+  add_index "districts", ["pinyin"], :name => "index_districts_on_pinyin"
+  add_index "districts", ["pinyin_abbr"], :name => "index_districts_on_pinyin_abbr"
 
   create_table "line_items", :force => true do |t|
     t.integer  "cart_id"
@@ -129,6 +185,18 @@ ActiveRecord::Schema.define(:version => 20130924143908) do
     t.integer  "liked_count", :default => 0
     t.integer  "list_id"
   end
+
+  create_table "provinces", :force => true do |t|
+    t.string   "name"
+    t.string   "pinyin"
+    t.string   "pinyin_abbr"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "provinces", ["name"], :name => "index_provinces_on_name"
+  add_index "provinces", ["pinyin"], :name => "index_provinces_on_pinyin"
+  add_index "provinces", ["pinyin_abbr"], :name => "index_provinces_on_pinyin_abbr"
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"

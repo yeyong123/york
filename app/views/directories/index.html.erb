@@ -1,0 +1,21 @@
+<h3>申请目录列表</h3>
+<table class="table">
+	<tr>
+		<th>公司名称</th>
+		<th>姓名</th>
+		<th>电话</th>
+		<th>手机</th>
+		<th>地址</th>
+	</tr>
+	<% @directories.each do |dir| %>
+		<tr>
+			<td><%= link_to dir.company, directory_path(dir) %></td>
+			<td><%= dir.name %></td>
+			<td><%= dir.telphoneumber %></td>
+			<td><%= dir.phone %></td>
+			<td><%= dir.province.name %><%= dir.city.name %><%= dir.district.name %><%= dir.address %></td>
+			<td><%= link_to "邮寄" %></td>
+		</tr>
+	<% end %>
+</table>
+

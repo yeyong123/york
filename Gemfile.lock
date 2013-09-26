@@ -48,6 +48,10 @@ GEM
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
+    china_region_fu (0.0.6)
+      actionpack
+      activesupport
+      httparty
     ckeditor (4.0.4)
       mime-types
       orm_adapter
@@ -72,6 +76,9 @@ GEM
     haml (4.0.3)
       tilt
     hike (1.2.3)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     i18n (0.6.1)
     journey (1.0.4)
     jquery-rails (3.0.4)
@@ -98,6 +105,7 @@ GEM
       subexec (~> 0.2.1)
     mini_portile (0.5.1)
     multi_json (1.8.0)
+    multi_xml (0.5.5)
     mysql2 (0.3.13)
     nested_form (0.3.2)
     nokogiri (1.6.0)
@@ -211,6 +219,7 @@ DEPENDENCIES
   bootstrap-will_paginate
   capybara
   carrierwave
+  china_region_fu
   ckeditor
   coffee-rails (~> 3.2.1)
   devise

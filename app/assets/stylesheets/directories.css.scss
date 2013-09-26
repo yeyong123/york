@@ -1,0 +1,29 @@
+// Place all the styles related to the directories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#error_explanation {
+	color: red;
+}
+.field-directory {
+	float: left;
+	margin-right: 10px;
+}
+.field-directory #directory_zip{
+	width: 30px;
+	float: left;
+}
+.field-directory #directory_tel {
+	width: 40px;
+}
+ .field-address	{
+	 clear: both;
+ }
+ #directory_province_id, #directory_city_id, #directory_district_id {
+	 width: auto;
+	 float: left;
+ }
+ .field-address #directory_address {
+	 float: none;
+		 clear: both;
+	 width: auto;
+ }

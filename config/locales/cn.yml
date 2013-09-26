@@ -33,16 +33,16 @@
     list:
       show: "详细.."
       cart: "加入购物车"
-      like: "喜欢"
+      like: "收藏"
       visit: "浏览"
     like_view:
       cart: "加入购物车"
       show: "查看"
-      like: "喜欢"
+      like: "收藏"
       visit: "浏览"
   home:
     index_products:
       cart: "加入购物车"
       show: "查看"
       visit: "浏览"
-      like: "喜欢"
+      like: "收藏"

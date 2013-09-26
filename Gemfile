@@ -17,6 +17,7 @@ gem 'bootstrap-will_paginate'
 gem 'jquery-ui-rails'
 gem 'likeable'
 gem 'redis'
+gem 'china_region_fu'
 gem 'rails_admin'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

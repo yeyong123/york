@@ -10,7 +10,7 @@
 <div class="index-top">
 	<ul>
 		<% if current_user %>
-			<li> <%= link_to current_user.name, product_users_path, style: "color: black; font-weight: bold"%> &nbsp</li>
+			<li> <%= link_to current_user.name, new_customer_path, style: "color: black; font-weight: bold"%> &nbsp</li>
 			<li><%= link_to t('.signout'), destroy_user_session_path, method: :delete, class: "btn btn-mini btn-danger" %></li>
 		<% else %>
 		<li><%= link_to t('.signin'), new_session_path(:user), class: "btn btn-mini btn-primary"%>&nbsp</li>

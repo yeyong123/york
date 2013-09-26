@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 	has_many :product_users
 	has_one :cart
+	has_one :customer
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :name,:password, :password_confirmation, :remember_me

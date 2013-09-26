@@ -1,0 +1,36 @@
+	<div class="field">
+			<%= f.label :company %>
+			<%= f.text_field :company %>
+		</div>
+		<div>
+			<%= f.label :hangye %>
+			<%= f.select :hangye, Directory::HANGYE, prompt: "所属行业"%>
+		</div>
+		<div class="field">
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		</div>
+		<div class="field">
+			<%= f.label :phone %>
+			<%= f.text_field :phone %>
+		</div>
+		<div class="field field-directory">
+			<%= f.label :zip %>
+			<%= f.text_field :zip %>
+		</div>
+		<div class="field field-directory">
+			<%= f.label :telnumber %>
+			<%= f.text_field :telphoneumber %>
+		</div>
+		<div class="field field-directory">
+			<%= f.label :tel %>
+			<%= f.text_field :tel %> 
+		</div>
+		<div class="field field-address">
+			<%= f.label :address, "邮寄地址" %>
+			<%= collection_select(:directory, :province_id, Province.all, :id, :name) %>
+			<%= grouped_collection_select(:directory, :city_id, Province.all, :cities, :id, :id, :name) %>
+			<%= grouped_collection_select(:directory, :district_id, City.all, :districts, :id, :id, :name) %>
+			<%= f.text_field :address %>
+		</div>
+	
