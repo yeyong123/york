@@ -7,6 +7,8 @@
 		<small><%= product.use %></small>
 		<p><%= raw truncate(product.content, length: 13) %></p>
 	</div>
+	<%= button_to t('.cart'), line_items_path(product_id: product), class: "btn" %>
+
 </div>
 </li>
 

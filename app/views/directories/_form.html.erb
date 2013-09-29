@@ -15,15 +15,24 @@
 			</div>
 		<% end %>
 		<%= render partial: "directories/list", locals: {f: f} %>
-	<div class="form-action">
+		<div class="field field-address">
+			<%= f.label :address, "邮寄地址" %>
+			<%= collection_select(:directory, :province_id, Province.all, :id, :name) %>
+			<%= grouped_collection_select(:directory, :city_id, Province.all, :cities, :id, :id, :name) %>
+			<%= grouped_collection_select(:directory, :district_id, City.all, :districts, :id, :id, :name) %>
+		</div>
+		<div class="field_address">
+			<%= f.text_field :address %>
+		</div>
+		<div class="form-action">
 			<%= f.submit "Submit", class: "btn btn-success" %>
 		</div>
-
-		<% end %>
+	<% end %>
 </div>
+
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('#directory_city_id').linkSelect();
-		$('#directory_district_id').linkSelect();
-	});
-	</script>
+			$('#directory_city_id').linkSelect();
+			$('#directory_district_id').linkSelect();
+			});
+</script>

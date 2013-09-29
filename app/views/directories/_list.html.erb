@@ -24,13 +24,6 @@
 		</div>
 		<div class="field field-directory">
 			<%= f.label :tel %>
-			<%= f.text_field :tel %> 
-		</div>
-		<div class="field field-address">
-			<%= f.label :address, "邮寄地址" %>
-			<%= collection_select(:directory, :province_id, Province.all, :id, :name) %>
-			<%= grouped_collection_select(:directory, :city_id, Province.all, :cities, :id, :id, :name) %>
-			<%= grouped_collection_select(:directory, :district_id, City.all, :districts, :id, :id, :name) %>
-			<%= f.text_field :address %>
+			<%= f.text_field :tel %><br /> 
 		</div>
 	

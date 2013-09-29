@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
 	before_filter :set_i18n_locale_from_params
   protect_from_forgery
 	before_filter :find_cart
+	before_filter :user_customer
+	
 
 	protected
 
@@ -43,6 +45,15 @@ class ApplicationController < ActionController::Base
 			@cart = current_user.cart
 		else
 			@cart = current_cart
+		end
+	end
+
+	def user_customer
+		if user_signed_in?
+		@user = current_user
+		@customer = @user.customer
+		else
+			return ""
 		end
 	end
 end

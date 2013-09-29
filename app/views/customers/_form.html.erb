@@ -17,7 +17,22 @@
 	<%= f.fields_for :directories do |f| %>
 		<%= render partial: "directories/list", locals: {f: f} %>
 	<% end %>
+	<div class="field field-address">
+			<%= f.label :address, "邮寄地址" %>
+			<%= collection_select(:customer, :province_id, Province.all, :id, :name) %>
+			<%= grouped_collection_select(:customer, :city_id, Province.all, :cities, :id, :id, :name) %>
+			<%= grouped_collection_select(:customer, :district_id, City.all, :districts, :id, :id, :name) %>
+		</div>
+		<div class="field-address">
+			<%= f.text_field :address %>
+		</div>
 	<div class="form-action">
 		<%= f.submit "Sbumit", class: "btn btn-success" %>
 	</div>
 <% end %>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#customer_city_id').linkSelect();
+		$('#customer_district_id').linkSelect();
+	});
+	</script>

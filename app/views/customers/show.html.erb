@@ -1,0 +1,28 @@
+<h3>个人中心信息</h3>
+<div class="user-layout">
+	<table class="table">
+	
+
+			<dt>用户名：<%= @user.name %></dt>
+			<dt>邮箱：<%= @user.email %></dt>
+			<% if @customer.nil?  %>
+				<%= link_to "完善个人信息", new_customer_path(@customer), class: "btn btn-success" %>
+			<% else %>
+	<tr>
+			<td><%= link_to "编辑个人信息", edit_customer_path, class: "btn btn-primary"%></td>
+		<tr>
+					<% @customer.directories.each do |dir| %>
+	<dt>公司：<%= dir.company %></dt>
+	<dt>手机：<%= dir.phone %></dt>
+	<dt>电话：<%= dir.telphoneumber %></dt>
+<% end %>
+<dt>地址: 
+<%= @customer.province.name %>
+<%= @customer.city.name %>
+<%= @customer.district.name %>
+</dt>
+<dt><%= @customer.address %></dt>
+</tr>
+<% end %>
+</table>
+</div>
