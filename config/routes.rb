@@ -4,14 +4,17 @@ York::Application.routes.draw do
   
 
 
-  mount Ckeditor::Engine => '/ckeditor'
-
-	scope '(:locale)' do
+ 	scope '(:locale)' do
 		mount RailsAdmin::Engine => '/members', :as => 'rails_admin'
 		devise_for :admins
 		devise_for :users
 		delete 'likes/:resource_name/:resource_id' => "likes#destroy", as: 'like'
 		post 'likes/:resource_name/:resource_id' => "likes#create", as: 'like'
+		mount Ckeditor::Engine => '/ckeditor'
+		resources :abouts
+    resources :servers
+		resources :topics
+		match '/contact' => 'topics#contact'
 		resource :cart
 		resources :line_items
 		resources :products

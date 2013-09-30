@@ -26,11 +26,7 @@ class ApplicationController < ActionController::Base
 
 	def current_cart
 		if user_signed_in? && current_user
-			if current_user.cart.nil?
-				@cart = current_user.create_cart
-			else
-				@cart = Cart.find_by_user_id(session[:user_id])
-			end
+			@cart = Cart.find_by_user_id(session[:user_id])
 		else
 			Cart.find(session[:cart_id])
 		end
@@ -42,7 +38,11 @@ class ApplicationController < ActionController::Base
 
 	def find_cart
 		if user_signed_in? && current_user
+			if current_user.cart.nil?
+				@cart = current_user.create_cart
+			else
 			@cart = current_user.cart
+			end
 		else
 			@cart = current_cart
 		end
